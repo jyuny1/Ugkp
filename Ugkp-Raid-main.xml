@@ -396,8 +396,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			</Anchors>
 			<Layers>
 				<Layer level="BACKGROUND">
-				  <!--
-					<Texture file="Interface\AddOns\Ugkp\Images\duniuLogo.blp">
+					<Texture file="Interface\AddOns\Ugkp\Images\dobang.tga">
 						<Size>
 							<AbsDimension x="128" y="64"/>
 						</Size>
@@ -409,7 +408,6 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					      </Texture>
-					      -->
 				</Layer>
 
 				<Layer level="NaWou_DiJal">

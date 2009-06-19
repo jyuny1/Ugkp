@@ -8,7 +8,7 @@ function UgkpButton_OnClick()
 	ugkp_dkp_show();
 end
 
-ugkp_dkp_show=function() 
+ugkp_dkp_show=function()
 	if(UGkpMainFrame:IsVisible()) then
 		HideUIPanel(UGkpMainFrame);
 	else
@@ -35,7 +35,7 @@ function UGKPMain_SelectTab(tab)
 	local TabFrames = {
 			[1] = "Ugkp_RaidMainFrame",
 			[2] = "Ugkp_Set"
-			
+
 		};
 		for id, name in pairs(TabFrames) do
 			if (id == tab) then
@@ -44,7 +44,7 @@ function UGKPMain_SelectTab(tab)
 				getglobal(name):Hide();
 			end
 		end
-	
+
 end
 
 function UGKPMain_OnMouseUp()
@@ -74,7 +74,7 @@ function UGKPMain_OnShow()
 		firstShow = false;
 	end;
 	getglobal("UGkpMainFrameTitle"):SetText(UGKP_TITLE.."V"..DkpVersion)
-	
+
 end
 
 function UGKPMain_OnLoad()
@@ -83,8 +83,8 @@ function UGKPMain_OnLoad()
 	PanelTemplates_SetNumTabs(UGkpMainFrame, 2);
 	--UGKPMain_SelectTab(1);
 	PanelTemplates_SetTab(UGkpMainFrame, 1);
-	
-	
+
+
 end
 
 function UGKP_Toggle(page)
@@ -112,7 +112,7 @@ function UGKP_Help_SetTooltip()
 	else
 		anchor = "TOP";
 	end
-	
+
 	if ( thisX < uiX  ) then
 		if ( anchor == "TOP" ) then
 			anchor = "TOPLEFT";
@@ -155,7 +155,7 @@ end
 
 dkp_initialize = function()
 		SlashCmdList["SHOW_GKP"] = ugkp_dkp_show;
-		SLASH_SHOW_GKP1 = "/ugkp";
+		SLASH_SHOW_GKP1 = SLASH_COMMAND_STRING;
 end;
 
 

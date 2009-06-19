@@ -1,8 +1,8 @@
 local lang = GetLocale() -- Don't touch these two lines
 if lang ~= "zhTW" then return end;
 
---UGKP_TITLE = "嘟牛 GKP 系統";
-UGKP_TITLE = "嘟牛UGKP插件";
+UGKP_TITLE = "渡邊G團分贓插件(由 Ugkp 修改)";
+SLASH_COMMAND_STRING="/dobang"
 
 UGKP_TAB_RAID = "G團";
 UGKP_TAB_SIGNUP = "報名";
@@ -21,7 +21,7 @@ UGKP_TAB_ITEM_HL = "黑龍";
 UGKP_TAB_ITEM_FX = "廢墟";
 
 UGKP_TEXT_RAID_LIST = "G團列表";
-UGKP_TEXT_RAID_HEADER = "G團信息";
+UGKP_TEXT_RAID_HEADER = "G團訊息";
 
 UGKP_HEAD_SELECT = "選擇";
 UGKP_HEAD_UPDATE= "操作";
@@ -133,11 +133,11 @@ UGKP_STRING_ITEM_GET="拍賣物品";
 UGKP_BUTTON_MEMBER_DELETE="刪除成員";
 UGKP_MESSAGE_MEMBER_DELETE="刪除人員將不參加金幣的分配，確認刪除？";
 UGKP_MESSAGE_MEMBER="打對勾的為要分金幣的成員：";
-UGKP_MESSAGE_RAID="G團信息：";
-UGKP_MESSAGE_ITEM="物品信息：";
+UGKP_MESSAGE_RAID="G團訊息：";
+UGKP_MESSAGE_ITEM="物品訊息：";
 UGKP_MESSAGE_EVENT="金幣收支表：";
-UGKP_MESSAGE_CHANNEL="頻道信息：";
-UGKP_TITLE_COPYRIGHT="[嘟牛遊戲網:www.duniu.com]";
+UGKP_MESSAGE_CHANNEL="頻道訊息：";
+UGKP_TITLE_COPYRIGHT="[渡邊G團：http://doban-g.wikidot.com]";
 
 UGKP_MESSAGE_COIN_IN="收入金額：";
 UGKP_MESSAGE_COIN_OUT="支出金額：";
@@ -394,7 +394,7 @@ UGKP_BUTTON_REPORT_GEN1="生成概要報表";
 UGKP_BUTTON_REPORT_GEN2="生成詳細報表";
 UGKP_BUTTON_REPORT_SEND="發送";
 
-UGKP_BUTTON_SEND_MONEY="發送分配信息";
+UGKP_BUTTON_SEND_MONEY="發送分配訊息";
 UGKP_HEAD_UPDATE1="補/扣";
 
 --Ugkp-item
