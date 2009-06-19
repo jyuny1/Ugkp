@@ -186,7 +186,7 @@ function UgkpChangeItemDkp(itemid)
 						["eventid"] = UgkpGenId(),
 						["itemid"] = itemid,
 						["itemname"] = UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i]["name"],
-						["reason"] = UGKP_STRING_ITEM_GET.."|c"..item["c"].."|Hitem:"..item["id"].."|h["..item["name"].."]|h|r",--UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i]["name"],
+						["reason"] = "|c"..item["c"].."|Hitem:"..item["id"].."|h["..item["name"].."]|h|r",--UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i]["name"],
 						["type"] = 3,
 						["eventtime"] = Ugkp_Date(),
 						["dkp"] =0 - newitemdkp,

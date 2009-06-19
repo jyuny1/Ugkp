@@ -1,5 +1,5 @@
 local lang = GetLocale() -- Don't touch these two lines
-if lang ~= "zhTW" then return;
+if lang ~= "zhTW" then return end;
 
 --UGKP_TITLE = "嘟牛 GKP 系統";
 UGKP_TITLE = "嘟牛UGKP插件";
@@ -154,8 +154,8 @@ UgkpRaid_Class = {
   ["DRUID"] = "德魯伊",
   ["WARLOCK"] = "術士",
   ["MAGE"] = "法師",
-  ["PRIEST"] = "牧師"
-  ["DEATHKNIGHT"] = "死亡騎士"
+  ["PRIEST"] = "牧師",
+  ["DEATHKNIGHT"] = "死亡騎士",
 };
 
 UgkpRaid_Race = {
@@ -168,7 +168,7 @@ UgkpRaid_Race = {
   ["Troll"] = "食人妖",
   ["Scourge"] = "不死族",
   ["Draenei"] = "德萊尼",
-  ["BloodElf"] = "血精靈"
+  ["BloodElf"] = "血精靈",
 };
 
 UGKP_SET="Ugkp 設置";
@@ -338,7 +338,7 @@ UGKP_MESSAGE_NO_MEMBER="沒有成員，你是否在一個RAID中";
 UGKP_BUTTON_RAID_DELETE="刪除";
 UGKP_MESSAGE_RAID_DELETE="確定要刪除選中的RAID嗎";
 UGKP_MESSAGE_DUNIU="由嘟牛遊戲網UGKP發佈";
-UGKP_MESSAGE_TITLE_REPORT="本次G團報表"
+UGKP_MESSAGE_TITLE_REPORT="本次渡邊 G 團消費報告"
 
 UGKP_MESSAGE_GOLD="金幣";
 UGKP_MESSAGE_SILVER="銀幣";
@@ -368,7 +368,7 @@ UGKP_BUTTON_RAID_PUB="發佈";
 UGKP_MESSAGE_ADDITEM="增加物品"
 
 UGKP_HEAD_REPORT_REVENUE="總收入";
-UGKP_HEAD_REPORT_ITEM="裝備拍買";
+UGKP_HEAD_REPORT_ITEM="裝備拍買收入";
 UGKP_HEAD_REPORT_PACKET="打包拍賣";
 UGKP_HEAD_REPORT_PUNISHMENT="扣錢";
 UGKP_HEAD_REPORT_LAST="最終分配";

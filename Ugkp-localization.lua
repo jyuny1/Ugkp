@@ -1,6 +1,5 @@
-local lang, _ = GetLocale(), Battleguard.AntiSlack.LocalizedStrings -- Don't touch these two lines
-
-if lang ~= "zhCN" then return;
+local lang = GetLocale() -- Don't touch these two lines
+if lang ~= "zhCN" then return end
 
 --UGKP_TITLE = "嘟牛 GKP 系统";
 UGKP_TITLE = "嘟牛UGKP插件";

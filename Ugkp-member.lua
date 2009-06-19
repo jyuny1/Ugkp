@@ -61,8 +61,8 @@ function Ugkp_UpdateMember()
 					getglobal("UgkpMemberFrameListButton" .. i .. "Class"):SetText(v["class"]);
 					getglobal("UgkpMemberFrameListButton" .. i .. "Level"):SetText(v["level"]);
 					getglobal("UgkpMemberFrameListButton" .. i .. "Cdkp"):SetText(v["dkp"]);
-					getglobal("UgkpMemberFrameListButton" .. i .. "Ldkp"):SetText(v["pdkp"]+v["dkp"]);
-					getglobal("UgkpMemberFrameListButton" .. i .. "Pdkp"):SetText(v["pdkp"]);
+					--getglobal("UgkpMemberFrameListButton" .. i .. "Ldkp"):SetText(v["pdkp"]+v["dkp"]);
+					--getglobal("UgkpMemberFrameListButton" .. i .. "Pdkp"):SetText(v["pdkp"]);
 					getglobal("UgkpMemberFrameListButton" .. i .. "Map"):SetText(v["zone"]);
 					getglobal("UgkpMemberFrameListButton" .. i .. "JoinTime"):SetText(v["join"]);
 					getglobal("UgkpMemberFrameListButton" .. i .. "TotalTime"):SetText(hour..UGKP_MESSAGE_HOUR..minute..UGKP_MESSAGE_MINUTE);
@@ -75,8 +75,8 @@ function Ugkp_UpdateMember()
 					getglobal("UgkpMemberFrameListButton" .. i .. "Class"):SetText("|cff9d9d9d"..v["class"]);
 					getglobal("UgkpMemberFrameListButton" .. i .. "Level"):SetText("|cff9d9d9d"..v["level"]);
 					getglobal("UgkpMemberFrameListButton" .. i .. "Cdkp"):SetText("|cff9d9d9d"..v["dkp"]);
-					getglobal("UgkpMemberFrameListButton" .. i .. "Ldkp"):SetText("|cff9d9d9d"..(v["pdkp"]+v["dkp"]));
-					getglobal("UgkpMemberFrameListButton" .. i .. "Pdkp"):SetText("|cff9d9d9d"..v["pdkp"]);
+					--getglobal("UgkpMemberFrameListButton" .. i .. "Ldkp"):SetText("|cff9d9d9d"..(v["pdkp"]+v["dkp"]));
+					--getglobal("UgkpMemberFrameListButton" .. i .. "Pdkp"):SetText("|cff9d9d9d"..v["pdkp"]);
 					getglobal("UgkpMemberFrameListButton" .. i .. "Map"):SetText("|cff9d9d9d"..v["zone"]);
 					getglobal("UgkpMemberFrameListButton" .. i .. "JoinTime"):SetText("|cff9d9d9d"..v["join"]);
 					getglobal("UgkpMemberFrameListButton" .. i .. "TotalTime"):SetText("|cff9d9d9d"..hour..UGKP_MESSAGE_HOUR..minute..UGKP_MESSAGE_MINUTE);
@@ -160,7 +160,7 @@ function Ugkp_Member_Compute()
 							["totaltime"] = time()-UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["IntStartTime"],
 							["dkp"] = 0,
 							["ldkp"] = 0,
-							["pdkp"] = getUgkpPlayerGKPLeft(sPlayer),
+							--["pdkp"] = getUgkpPlayerGKPLeft(sPlayer),
 							["zone"] = zone,
 							["rank"] = rank,
 							["online"] = online,
@@ -176,13 +176,13 @@ function Ugkp_Member_Compute()
 						{
 							["player"] = sPlayer,
 							["race"] = UgkpRaid_Race[race],
-							["class"] = [fileName],
+							["class"] = UgkpRaid_Class[fileName],
 							["level"] = level,
 							["join"] = t.hour..":"..t.min,
 							["totaltime"] = time()-UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["IntStartTime"],
 							["dkp"] = 0,
 							["ldkp"] = 0,
-							["pdkp"] = getUgkpPlayerGKPLeft(sPlayer),
+							--["pdkp"] = getUgkpPlayerGKPLeft(sPlayer),
 							["zone"] = zone,
 							["rank"] = rank,
 							["online"] = online,

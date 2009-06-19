@@ -2,13 +2,13 @@ function Ugkp_Raid_OnLoad()
 
 	local totalRaids = 0;
 	totalRaids=getn(UGKP_PARTY_STUFF);
-	
+
 	if(totalRaids>0) then
-		
+
 		--Uasit_Debug("delete...",totalRaids,UgkpRaid_GetCurrentRaid)
 		if(UgkpRaid_GetCurrentRaid~=0) then
 			UgkpRaid_GetCurrentRaid=UgkpGetCurentRaid();
-			
+
 			if(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Status"]==-1) then
 				getglobal("UgkpRaidStatus_Edit".."Text"):SetText("|cff0070dd"..UGKP_MESSAGE_STATUS_CREATE.."|r");
 			elseif(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Status"]==0) then
@@ -25,31 +25,31 @@ function Ugkp_Raid_OnLoad()
 			getglobal("UgkpRaidName_Edit"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Notes"]);
 			getglobal("UgkpRaidLeader_Edit".."Text"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["RaidLeader"]);
 			getglobal("UgkpRaidStart_Edit".."Text"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["StartTime"]);
-			getglobal("UgkpRaidEnd_Edit".."Text"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["EndTime"]);		
+			getglobal("UgkpRaidEnd_Edit".."Text"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["EndTime"]);
 			getglobal("UgkpRaidHeaderString"):SetText(UGKP_MESSAGE_RAID.."|cff1eff00"..UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Notes"].." |r");
 			if(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Team"]~="") then
 				UIDropDownMenu_SetSelectedValue(getglobal("Ugkp_TeamDropDown"), UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Team"]);
 				Uasit_raidteamid=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Team"];
 			end
 		end
-		
+
 	else
 		HideUgkp_RaidFrameElement();
 		getglobal("UgkpRaidHeaderString"):SetText(UGKP_MESSAGE_RAID);
-	end	
+	end
 	UgkpUpdateRaidList();
 --	Ugkp_UpdateMember();
 --	Ugkp_UpdateEvent();
 --	Ugkp_UpdateItem();
 	UgkpChangeButtonStatus();
-	
-	
+
+
 end
 
 function Ugkp_UpdateRaid()
 	if(totalRaids>0) then
 		if(UgkpRaid_GetCurrentRaid~=0) then
-			
+
 			getglobal("UgkpRaidTime_Edit".."Text"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["RaidTime"]);
 			getglobal("Ugkp_RaidMap_Edit"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["RaidMap"]);
 			getglobal("UgkpRaidName_Edit"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Notes"]);
@@ -68,23 +68,23 @@ function HideUgkp_RaidFrameElement()
 	getglobal("UgkpRaidFrameRaidLeader"):Hide();
 	getglobal("UgkpRaidFrameRaidTimeTitle"):Hide();
 	getglobal("UgkpRaidFrameRaidEnd"):Hide();
-	
-	
+
+
 	getglobal("UgkpRaidTime_Edit"):Hide();
 	getglobal("Ugkp_RaidMap_Edit"):Hide();
 	getglobal("UgkpRaidName_Edit"):Hide();
 	getglobal("UgkpRaidLeader_Edit"):Hide();
 	getglobal("UgkpRaidStart_Edit"):Hide();
 	getglobal("UgkpRaidEnd_Edit"):Hide();
-	
+
 	getglobal("UgkpSaveRaid_Button"):Hide();
 	getglobal("UgkpRaidStart_Button"):Hide();
 	getglobal("UgkpRaidEnd_Button"):Hide();
 	getglobal("Ugkp_MapDropDown"):Hide();
-	
+
 	getglobal("UgkpRaidFrameStatusTitle"):Hide();
 	getglobal("UgkpRaidStatus_Edit"):Hide();
-	
+
 end
 
 
@@ -96,8 +96,8 @@ function ShowUgkp_RaidFrameElement()
 	getglobal("UgkpRaidFrameRaidLeader"):Show();
 	getglobal("UgkpRaidFrameRaidTimeTitle"):Show();
 	getglobal("UgkpRaidFrameRaidEnd"):Show();
-	
-	
+
+
 	getglobal("UgkpRaidTime_Edit"):Show();
 	getglobal("Ugkp_RaidMap_Edit"):Show();
 	getglobal("UgkpRaidName_Edit"):Show();
@@ -105,13 +105,13 @@ function ShowUgkp_RaidFrameElement()
 	getglobal("UgkpRaidStart_Edit"):Show();
 	getglobal("UgkpRaidEnd_Edit"):Show();
 	getglobal("Ugkp_MapDropDown"):Show();
-	
+
 	getglobal("UgkpSaveRaid_Button"):Show();
 	getglobal("UgkpRaidStart_Button"):Show();
 	getglobal("UgkpRaidEnd_Button"):Show();
 	getglobal("UgkpRaidStart_Button"):Disable();
 	getglobal("UgkpRaidEnd_Button"):Disable();
-	
+
 	getglobal("UgkpRaidFrameStatusTitle"):Show();
 	getglobal("UgkpRaidStatus_Edit"):Show();
 end
@@ -119,7 +119,7 @@ end
 function UgkpSaveRaid()
 
 	if(UgkpRaid_GetCurrentRaid~=0) then
-			
+
 
 			UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["RaidTime"]=getglobal("UgkpRaidTime_Edit".."Text"):GetText();
 			UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["RaidMap"]=getglobal("Ugkp_RaidMap_Edit"):GetText();
@@ -134,9 +134,9 @@ function UgkpSaveRaid()
 	end
 	UgkpUpdateRaidList();
 	UgkpChangeButtonStatus();
-	
+
 	UgkpSaveRuler();
-	
+
 	getglobal("UgkpRaidHeaderString"):SetText(UGKP_MESSAGE_RAID.."(|cff1eff00"..UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Notes"].." |r)");
 end
 
@@ -145,23 +145,23 @@ function UgkpStartRaid()
 	UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["StartTime"]=Ugkp_Date();
 	UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["IntStartTime"]=time();
 	UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Status"]=1;
-	
-	getglobal("UgkpRaidStart_Edit".."Text"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["StartTime"]);		
+
+	getglobal("UgkpRaidStart_Edit".."Text"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["StartTime"]);
 	getglobal("UgkpRaidStart_Button"):Disable();
 	getglobal("UgkpRaidEnd_Button"):Enable();
 	local t = date("*t");
-	
+
 	for i = 1, GetNumRaidMembers(), 1 do
-		
-		
+
+
 		local sPlayer = UnitName("raid" .. i);
 		local _, race = UnitRace("raid" .. i);
-		
-		
+
+
 		if(sPlayer ~= UgkpRaid_lang_UnknownEntity) then
 			local name, rank, subgroup, level, class, fileName, zone, online = GetRaidRosterInfo(i);
-			
-			
+
+
 			if(rank==2) then
 				UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["RaidLeader"]=name;
 			end
@@ -176,7 +176,7 @@ function UgkpStartRaid()
 						["totaltime"] = 0,
 						["dkp"] = 0,
 						["ldkp"] = 0,
-						["pdkp"] = getUgkpPlayerGKPLeft(sPlayer),
+						--["pdkp"] = getUgkpPlayerGKPLeft(sPlayer),
 						["zone"] = zone,
 						["rank"] = rank,
 						["online"] = 1,
@@ -202,7 +202,7 @@ function UgkpStartRaid()
 						["leavetime"] = 0
 					}
 				);
-				
+
 
 				--UgkpRaid_GatheredData_Temp[name] = true;
 			end
@@ -212,7 +212,7 @@ function UgkpStartRaid()
 	end
 	Ugkp_Raid_OnLoad();
 	getglobal("UgkpRaidStatus_Edit".."Text"):SetText("|cff0070dd"..UGKP_MESSAGE_STATUS_ACTIVE.."|r");
-	
+
 end
 
 function UgkpEndRaid()
@@ -225,7 +225,7 @@ function UgkpEndRaid()
 	getglobal("Ugkp_AddRaid_Button"):Enable();
 	UgkpUpdateRaidList();
 	getglobal("UgkpRaidStatus_Edit".."Text"):SetText("|cff0070dd"..UGKP_MESSAGE_STATUS_CLOSED.."|r");
-	
+
 end
 
 function UgkpChangeMap()
@@ -255,7 +255,7 @@ function Ugkp_MapDropDown_OnShow()
  else
  		UIDropDownMenu_SetSelectedValue(Ugkp_MapDropDown,Ugkp_RaidMap_Edit:GetText());
  end
-  
+
 end
 
 function UgkpChangeButtonStatus()

@@ -3,7 +3,7 @@ function ugkp_change_packet()
 		UgkpRaidMessageBox(UGKP_ERROR_PACKET_TITLE);
 		return;
 	end
-	
+
 	if(ugkp_change_id=="1") then
 		UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet1"]=ugkp_point;
 	end
@@ -16,17 +16,17 @@ function ugkp_change_packet()
 	if(ugkp_change_id=="4") then
 		UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet4"]=ugkp_point;
 	end
-	
+
 	getglobal("UgkpReportPacket1_EditText"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet1"]);
 	getglobal("UgkpReportPacket2_EditText"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet2"]);
 	getglobal("UgkpReportPacket3_EditText"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet3"]);
 	getglobal("UgkpReportPacket4_EditText"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet4"]);
-	
-	
+
+
 end
 
 function ugkp_report_onshow()
-	
+
 	getglobal("UgkpReportPacket1_EditText"):SetText(0);
 	getglobal("UgkpReportPacket2_EditText"):SetText(0);
 	getglobal("UgkpReportPacket3_EditText"):SetText(0);
@@ -45,12 +45,12 @@ function ugkp_report_onshow()
 		if(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet4"]==nil) then
 			UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet4"]=0;
 		end
-		
+
 		getglobal("UgkpReportPacket1_EditText"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet1"]);
 		getglobal("UgkpReportPacket2_EditText"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet2"]);
 		getglobal("UgkpReportPacket3_EditText"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet3"]);
 		getglobal("UgkpReportPacket4_EditText"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet4"]);
-		
+
 		incoin=0;
 		outcoin=0;
 		totalEvents=0;
@@ -68,15 +68,15 @@ function ugkp_report_onshow()
 		totalMember=getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"]);
 		l=0;
 		for i=1,totalMember do
-		
+
 			if( (not UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][i]["ischeck"]) or UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][i]["ischeck"]=="1") then
 				l=l+1;
 			end
 		end
 		local ugkp_sum=incoin+UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet1"]+UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet2"]+UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet3"]+UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet4"]
 		local ugkp_last=ugkp_sum - outcoin;
-		
-		
+
+
 		getglobal("Ugkp_ReportFrameRevenue"):SetText(UGKP_HEAD_REPORT_REVENUE..":|cff1eff00"..ugkp_sum.."|r");
 		getglobal("Ugkp_ReportFrameItem"):SetText(UGKP_HEAD_REPORT_ITEM..":|cff1eff00"..incoin.."|r");
 		getglobal("Ugkp_ReportFrameSpend"):SetText(UGKP_HEAD_REPORT_SPEND..":|cffff0000"..outcoin.."|r");
@@ -101,12 +101,12 @@ function ugkp_gen_report(report_type)
 			e = UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"][i];
 			if(e["dkp"]<0 and e["type"]==3) then
 				if(report_type==2) then
-					in_item_text=in_item_text.."\n"..e["reason"]..","..e["players"][1]..e["dkp"]*(-1).."G";
+					in_item_text=in_item_text.."\n"..e["reason"].."-->"..e["players"][1].." "..e["dkp"]*(-1).."G";
 				end
 				incoin=incoin+e["dkp"]*(-1);
 			else
 				if(report_type==2) then
-					out_item_text=out_item_text.."\n"..e["reason"]..","..e["players"][1]..e["dkp"].."G";
+					out_item_text=out_item_text.."\n"..e["reason"].."->"..e["players"][1].." "..e["dkp"].."G";
 				end
 				outcoin=outcoin+e["dkp"];
 			end
@@ -114,20 +114,20 @@ function ugkp_gen_report(report_type)
 		totalMember=getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"]);
 		l=0;
 		for i=1,totalMember do
-		
+
 			if( (not UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][i]["ischeck"]) or UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][i]["ischeck"]=="1") then
 				l=l+1;
 			end
 		end
 		local ugkp_sum=incoin+UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet1"]+UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet2"]+UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet3"]+UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet4"]
 		local ugkp_last=ugkp_sum - outcoin;
-		
+
 		report_text=UGKP_MESSAGE_TITLE_REPORT.."("..UGKP_MESSAGE_DUNIU..")";
 		report_text=report_text.."\n"..UGKP_HEAD_REPORT_REVENUE..":"..ugkp_sum.."G";
 		report_text=report_text.."\n".."----------------------"
 		report_text=report_text.."\n"..UGKP_HEAD_REPORT_ITEM..":"..incoin.."G";
 		report_text=report_text.."\n"..in_item_text;
-		
+
 		if(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet1"]~=0) then
 			report_text=report_text.."\n"..UGKP_HEAD_REPORT_PACKET.."一"..UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet1"].."G";
 		end
@@ -157,7 +157,7 @@ end
 
 
 function ugkp_send_report()
-	
+
 	s=getglobal("ugkp_ReportGenBodyEditBox"):GetText()
 	pos=0;
 	pos1=0;

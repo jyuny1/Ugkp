@@ -1,6 +1,6 @@
 ## Interface: 30100
-## Title: Ugkp  V3.0.0
-## Notes:  V3.oo.0a [ duniu.com ]对事件中的GKP进行记录
+## Title:  UGkp V3.10-dobang
+## Notes:  V3.10-dobang Ugkp
 ## OptionalDeps:
 ## Dependencies:
 ## SavedVariables: UGKP_PARTY_STUFF, Gkp_CurrentRaidId,UgkpOptions,Ugkp_item_auction
