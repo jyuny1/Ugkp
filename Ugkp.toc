@@ -1,6 +1,6 @@
 ## Interface: 30100
 ## Title:  UGkp V3.10-dobang
-## Notes:  渡邊G團分贓系統 V3.10-dobang
+## Notes:  UGkp V3.10-dobang
 ## OptionalDeps:
 ## Dependencies:
 ## SavedVariables: UGKP_PARTY_STUFF, Gkp_CurrentRaidId,UgkpOptions,Ugkp_item_auction
