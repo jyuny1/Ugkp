@@ -1,0 +1,146 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+
+<Script file="Ugkp-item-default.lua"/>
+
+<Frame name="Ugkp_ItemDefaultFrame" parent="UGkpMainFrame" inherits="UGKPTabFrame">
+
+<Frames>
+
+					
+			<Frame name="UgkpBossListBorderFrame" inherits="OptionsBoxTemplate">
+			<Size>
+				<AbsDimension x="150" y="400"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT" relativeTo="Ugkp_RaidMainFrame" relativePoint="TOPLEFT">
+					<Offset>
+						<AbsDimension x="10" y="-15"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Layers>
+				<Layer level="BACKGROUND">
+					<FontString name="UgkpRaidList_String" inherits="GameFontNormal" justifyH="LEFT" text="UGKP_TEXT_RAID_LIST">
+						<Size>
+							<AbsDimension x="220" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="BOTTOMLEFT" relativeTo="UgkpRaidListBorderFrame" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="0" y="4" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+                                                
+					</FontString>
+				</Layer>
+			</Layers>
+			<Frames>
+				
+			</Frames>
+			<Scripts>
+				<OnLoad>
+					this:SetBackdropColor(1,1,1,0)
+				</OnLoad>
+			</Scripts>
+			
+			
+		</Frame>
+		
+		<Frame name="UgkpItemDefaultBorderFrame" inherits="OptionsBoxTemplate">
+			<Size>
+				<AbsDimension x="598" y="400"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT" relativeTo="UgkpRaidListBorderFrame" relativePoint="TOPRIGHT">
+					<Offset>
+						<AbsDimension x="2" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Layers>
+				<Layer level="BACKGROUND">
+					<FontString name="UgkpRaidHeaderString" inherits="GameFontNormal" justifyH="LEFT" text="UGKP_TEXT_RAID_HEADER">
+						<Size>
+							<AbsDimension x="512" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="BOTTOMLEFT" relativeTo="UgkpRaidBorderFrame" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="0" y="4" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+                                                
+					</FontString>
+				</Layer>
+			</Layers>
+			<Frames>
+			
+				<Button name="$parentTab1" inherits="CharacterFrameTabButtonTemplate" id="1" text="UGKP_TAB_ITEM_ZR">
+						<Anchors>
+							<Anchor point="CENTER" relativePoint="BOTTOMLEFT" relativeTo="UgkpRaidBorderFrame">
+								<Offset>
+									<AbsDimension x="45" y="-14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpRaidMain_SelectTab(1);</OnClick>
+						</Scripts>
+					</Button>
+			
+					<Button name="$parentTab2" inherits="CharacterFrameTabButtonTemplate" id="2" text="UGKP_TAB_ITEM_HL">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab1" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpRaidMain_SelectTab(2);</OnClick>
+						</Scripts>
+					</Button>	
+					
+					<Button name="$parentTab3" inherits="CharacterFrameTabButtonTemplate" id="3" text="UGKP_TAB_ITEM_FX">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab2" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpRaidMain_SelectTab(3);</OnClick>
+						</Scripts>
+					</Button>
+					
+					
+			</Frames>
+			<Scripts>
+				<OnLoad>
+					this:SetBackdropColor(1,1,1,0)
+				</OnLoad>
+			</Scripts>
+		</Frame>		
+</Frames>
+<Scripts>
+	<OnLoad>
+		--Ugkp_RaidMain_OnLoad();
+	</OnLoad>
+	<OnShow>
+		--Ugkp_RaidMain_OnShow();
+	</OnShow>
+	<OnEvent>
+	  	--Ugkp_RaidMain_OnEvent(event);
+	</OnEvent> 
+	<OnHide>
+		--PlaySound("UChatScrollButton");
+	</OnHide>
+</Scripts>
+ </Frame>
+ 
+ 
+ </Ui>

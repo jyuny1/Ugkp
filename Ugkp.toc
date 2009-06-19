@@ -1,0 +1,19 @@
+## Interface: 30000
+## Title: Ugkp  V3.0.0
+## Notes:  V3.oo.0a [ duniu.com ]对事件中的GKP进行记录
+## OptionalDeps:
+## Dependencies:
+## SavedVariables: UGKP_PARTY_STUFF, Gkp_CurrentRaidId,UgkpOptions,Ugkp_item_auction
+Ugkp-main.xml
+Ugkp-Raid-main.xml
+Ugkp-raid.xml
+Ugkp-item.xml
+Ugkp-member.xml
+Ugkp-dkp.xml
+Ugkp-channel.xml
+Ugkp-set.xml
+ugkp-distribute.xml
+ugkp-item-default.xml
+Ugkp-set-item.xml
+Ugkp-report.xml
+Ugkp-item-packet.xml

@@ -1,0 +1,723 @@
+  <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+
+<Script file="Ugkp-distribute.lua"/>
+	<Button name="UgkpCoinButtonTemplate" virtual="true" >
+		<Size>
+			<AbsDimension x="200" y="25"/>
+		</Size>
+		
+		<Frames>
+		<CheckButton name="$parentCheck" inherits="OptionsCheckButtonTemplate"  virtual="true">
+		<Size>
+			<AbsDimension x="26" y="26"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<HitRectInsets>
+			<AbsInset left="0" right="0" top="0" bottom="0"/>
+		</HitRectInsets>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$parentId" inherits="GameFontNormal" justifyH="LEFT" hidden="true">
+					<Size>
+						<AbsDimension x="0" y="0"/>
+					</Size>
+				</FontString>
+			</Layer>
+		</Layers>
+		</CheckButton>
+		<Button name="$parentButton" >
+			<Size>
+				<AbsDimension x="120" y="26"/>
+			</Size>
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentCheck" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Layers>
+				<Layer level="BACKGROUND">
+					
+					<FontString name="$parentId" inherits="GameFontNormal" justifyH="LEFT" hidden="true">
+						<Size>
+							<AbsDimension x="0" y="0"/>
+						</Size>
+					</FontString>
+					<FontString name="$parentName" inherits="GameFontNormal" justifyH="LEFT" text="testtesttesttesttest">
+						<Size>
+							<AbsDimension x="70" y="16"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</FontString>
+					
+					<FontString name="$parentCoin" inherits="GameFontNormal" justifyH="LEFT" text="testtesttesttesttest">
+						<Size>
+							<AbsDimension x="50" y="16"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentName" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</FontString>
+				</Layer>
+			</Layers>
+			<HighlightTexture file="Interface\FriendsFrame\UI-FriendsFrame-HighlightBar" alphaMode="ADD">
+				<Size>
+					<AbsDimension x="110" y="16"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="0" y="-7"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</HighlightTexture>
+			
+		</Button>
+		</Frames>
+	
+	</Button>
+
+	<Frame name="Ugkp_DistributeFrame" parent="UgkpRaidBorderFrame" inherits="UgkpRaidTabFrame">
+		<Frames>	
+			<Button name="UgkpDisFrameColumnHeader1" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_NAME">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="Ugkp_DistributeFrame" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="5" y="-10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						Ugkp_setButtonWidth(100, this);
+					</OnLoad>
+				</Scripts>
+			</Button>
+			
+			<Button name="UgkpDisFrameColumnHeader2" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_MESSAGE_COIN">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpDisFrameColumnHeader1" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								Ugkp_setButtonWidth(50,this);
+							</OnLoad>
+						</Scripts>
+			</Button>
+			<Button name="UgkpDisFrameColumnHeader3" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_NAME">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpDisFrameColumnHeader2" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								Ugkp_setButtonWidth(100,this);
+							</OnLoad>
+						</Scripts>
+			</Button>
+			<Button name="UgkpDisFrameColumnHeader4" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_MESSAGE_COIN">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpDisFrameColumnHeader3" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								Ugkp_setButtonWidth(50,this);
+							</OnLoad>
+						</Scripts>
+			</Button>
+			<Button name="UgkpDisFrameColumnHeader5" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_NAME">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpDisFrameColumnHeader4" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								Ugkp_setButtonWidth(100,this);
+							</OnLoad>
+						</Scripts>
+			</Button>
+			<Button name="UgkpDisFrameColumnHeader6" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_MESSAGE_COIN">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpDisFrameColumnHeader5" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								Ugkp_setButtonWidth(50,this);
+							</OnLoad>
+						</Scripts>
+			</Button>
+			<Button name="UgkpDisFrameColumnHeader7" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_NAME">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpDisFrameColumnHeader6" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								Ugkp_setButtonWidth(100,this);
+							</OnLoad>
+						</Scripts>
+			</Button>
+			<Button name="UgkpDisFrameColumnHeader8" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_MESSAGE_COIN">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpDisFrameColumnHeader7" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								Ugkp_setButtonWidth(50,this);
+							</OnLoad>
+						</Scripts>
+			</Button>
+			<Button name="UgkpMemberCoinButton1" inherits="UgkpCoinButtonTemplate" id="1">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpDisFrameColumnHeader1"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="-2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton2" inherits="UgkpCoinButtonTemplate" id="2">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpDisFrameColumnHeader3"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="-2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton3" inherits="UgkpCoinButtonTemplate" id="3">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpDisFrameColumnHeader5"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="-2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton4" inherits="UgkpCoinButtonTemplate" id="4">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpDisFrameColumnHeader7"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton5" inherits="UgkpCoinButtonTemplate" id="5">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton1"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton6" inherits="UgkpCoinButtonTemplate" id="6">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton2"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton7" inherits="UgkpCoinButtonTemplate" id="7">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton3"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton8" inherits="UgkpCoinButtonTemplate" id="8">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton4"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			
+			<Button name="UgkpMemberCoinButton9" inherits="UgkpCoinButtonTemplate" id="9">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton5"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton10" inherits="UgkpCoinButtonTemplate" id="10">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton6"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton11" inherits="UgkpCoinButtonTemplate" id="11">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton7"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton12" inherits="UgkpCoinButtonTemplate" id="12">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton8"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			
+			<Button name="UgkpMemberCoinButton13" inherits="UgkpCoinButtonTemplate" id="13">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton9"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton14" inherits="UgkpCoinButtonTemplate" id="14">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton10"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton15" inherits="UgkpCoinButtonTemplate" id="15">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton11"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton16" inherits="UgkpCoinButtonTemplate" id="16">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton12"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			
+			
+			<Button name="UgkpMemberCoinButton17" inherits="UgkpCoinButtonTemplate" id="17">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton13"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton18" inherits="UgkpCoinButtonTemplate" id="18">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton14"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton19" inherits="UgkpCoinButtonTemplate" id="19">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton15"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton20" inherits="UgkpCoinButtonTemplate" id="20">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton16"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			
+			<Button name="UgkpMemberCoinButton21" inherits="UgkpCoinButtonTemplate" id="21">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton17"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton22" inherits="UgkpCoinButtonTemplate" id="22">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton18"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton23" inherits="UgkpCoinButtonTemplate" id="23">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton19"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton24" inherits="UgkpCoinButtonTemplate" id="24">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton20"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			
+			<Button name="UgkpMemberCoinButton25" inherits="UgkpCoinButtonTemplate" id="25">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton21"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton26" inherits="UgkpCoinButtonTemplate" id="26">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton22"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton27" inherits="UgkpCoinButtonTemplate" id="27">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton23"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton28" inherits="UgkpCoinButtonTemplate" id="28">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton24"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			
+			<Button name="UgkpMemberCoinButton29" inherits="UgkpCoinButtonTemplate" id="29">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton25"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton30" inherits="UgkpCoinButtonTemplate" id="30">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton26"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton31" inherits="UgkpCoinButtonTemplate" id="31">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton27"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton32" inherits="UgkpCoinButtonTemplate" id="32">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton28"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			
+			<Button name="UgkpMemberCoinButton33" inherits="UgkpCoinButtonTemplate" id="33">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton29"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton34" inherits="UgkpCoinButtonTemplate" id="34">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton30"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton35" inherits="UgkpCoinButtonTemplate" id="35">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton31"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton36" inherits="UgkpCoinButtonTemplate" id="36">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton32"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			
+			<Button name="UgkpMemberCoinButton37" inherits="UgkpCoinButtonTemplate" id="37">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton33"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton38" inherits="UgkpCoinButtonTemplate" id="38">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton34"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton39" inherits="UgkpCoinButtonTemplate" id="39">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton35"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton40" inherits="UgkpCoinButtonTemplate" id="40">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton36"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			
+			<Button name="UgkpMemberCoinButton41" inherits="UgkpCoinButtonTemplate" id="41">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton37"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton42" inherits="UgkpCoinButtonTemplate" id="42">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton38"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton43" inherits="UgkpCoinButtonTemplate" id="43">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton39"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton44" inherits="UgkpCoinButtonTemplate" id="44">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton40"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			
+			<Button name="UgkpMemberCoinButton45" inherits="UgkpCoinButtonTemplate" id="45">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton41"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton46" inherits="UgkpCoinButtonTemplate" id="46">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton42"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton47" inherits="UgkpCoinButtonTemplate" id="47">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton43"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton48" inherits="UgkpCoinButtonTemplate" id="48">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton44"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			
+			<Button name="UgkpMemberCoinButton49" inherits="UgkpCoinButtonTemplate" id="49">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton45"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton50" inherits="UgkpCoinButtonTemplate" id="50">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton46"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton51" inherits="UgkpCoinButtonTemplate" id="51">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton47"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			<Button name="UgkpMemberCoinButton52" inherits="UgkpCoinButtonTemplate" id="52">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberCoinButton48"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+			</Button>
+			
+			
+					
+			<Button name="UgkpSendMoneyButton" inherits="OptionsButtonTemplate" text="UGKP_BUTTON_SEND_MONEY">
+				<Size>
+					<AbsDimension x="120" y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM">
+						<Offset>
+							<AbsDimension x="200" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						Ugkp_Send_Member_Money();
+					</OnClick>
+				</Scripts>
+			</Button>
+			
+		</Frames>
+		<Scripts>
+			<OnShow>
+				Ugkp_UpdateDistribute();
+			</OnShow>
+		</Scripts>
+	</Frame>
+		
+</Ui>

@@ -1,0 +1,514 @@
+   <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+<Script file="Ugkp-report.lua"/>
+
+<Button name="UgkpReportEditButtonTemplate" virtual="true" >
+	<Size>
+		<AbsDimension x="60" y="32"/>
+	</Size>
+
+	<Layers>
+		<Layer level="BACKGROUND">
+			<Texture name="$parentLeft" file="Interface\ChatFrame\UI-ChatInputBorder-Left">
+				<Size>
+					<AbsDimension x="46" y="32"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT"/>
+				</Anchors>
+			</Texture>
+			<Texture name="$parentRight" file="Interface\ChatFrame\UI-ChatInputBorder-Right">
+				<Size>
+					<AbsDimension x="16" y="32"/>
+				</Size>
+				<Anchors>
+					<Anchor point="RIGHT"/>
+				</Anchors>
+				<TexCoords left="0.9375" right="1.0" top="0" bottom="1.0"/>
+			</Texture>
+			
+		</Layer>
+		<Layer level="OVERLAY">
+			<FontString name="$parentText" inherits="GameFontDisable" text="aaa" justifyH="LEFT">
+			<Size>
+				<AbsDimension x="60" y="26"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT">
+					<Offset>
+						<AbsDimension x="10" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			</FontString>
+		</Layer>
+	</Layers>
+			
+</Button>
+	
+ <Frame name="Ugkp_ReportFrame" parent="UgkpRaidBorderFrame" inherits="UgkpRaidTabFrame">
+  <Layers>
+		<Layer level="OVERLAY">
+				<FontString name="$parentRevenue" inherits="GameFontNormal" text="UGKP_HEAD_REPORT_REVENUE" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="100" y="0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="Ugkp_RaidFrame" relativePoint="TOPLEFT">
+							<Offset>
+								<AbsDimension x="20" y="-40"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentItem" inherits="GameFontHighlightSmall" text="UGKP_HEAD_REPORT_ITEM" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="100" y="0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentRevenue" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="-18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentpacket1" inherits="GameFontHighlightSmall" text="UGKP_HEAD_REPORT_PACKET" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="100" y="0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentItem" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="-18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentpacket2" inherits="GameFontHighlightSmall" text="UGKP_HEAD_REPORT_PACKET" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="100" y="0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentpacket1" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="-18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentpacket3" inherits="GameFontHighlightSmall" text="UGKP_HEAD_REPORT_PACKET" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="100" y="0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentpacket2" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="-18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			
+				
+				<FontString name="$parentpacket4" inherits="GameFontHighlightSmall" text="UGKP_HEAD_REPORT_PACKET" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="100" y="0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentpacket3" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="-18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				
+				<FontString name="$parentSpend" inherits="GameFontNormal" text="UGKP_HEAD_REPORT_SPEND" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="100" y="0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentpacket4" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="-18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentLast" inherits="GameFontNormal" text="UGKP_HEAD_REPORT_LAST" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="100" y="0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentSpend" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="-18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentMember" inherits="GameFontNormal" text="UGKP_HEAD_REPORT_MEMBER" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="100" y="0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentLast" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="-18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+		
+				
+			</Layer>
+			
+		</Layers>
+
+
+<Frames>
+	<Button name="UgkpReportPacket1_Edit"  inherits="UgkpReportEditButtonTemplate">
+		<Size>
+			<AbsDimension x="60" y="26"/>
+		</Size>
+		<Anchors>
+			<Anchor point="LEFT" relativeTo="$parentpacket1" relativePoint="RIGHT">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		
+	</Button>
+	<Button name="ChangePercentButton1" hidden="false">
+				<Size>
+					<AbsDimension x="16" y="16"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="UgkpReportPacket1_Edit" relativePoint="RIGHT">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						ugkp_changeNumber("1",UGKP_HEAD_PACKET_TITLE,UGKP_HEAD_PACKET_LABEL,ugkp_change_packet)
+					</OnClick>
+				</Scripts>
+				<NormalTexture  file="Interface\Buttons\UI-PlusButton-Up"/>
+				<DisabledTexture file="Interface\Buttons\UI-PlusButton-Disabled"/>
+				<HighlightTexture file="Interface\Buttons\UI-PlusButton-Up" alphaMode="ADD"/>
+	</Button>
+
+	<Button name="UgkpReportPacket2_Edit"  inherits="UgkpReportEditButtonTemplate">
+		<Size>
+			<AbsDimension x="60" y="26"/>
+		</Size>
+		<Anchors>
+			<Anchor point="LEFT" relativeTo="$parentpacket2" relativePoint="RIGHT">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		
+	</Button>
+	<Button name="ChangePercentButton2" hidden="false">
+				<Size>
+					<AbsDimension x="16" y="16"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="UgkpReportPacket2_Edit" relativePoint="RIGHT">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						ugkp_changeNumber("2",UGKP_HEAD_PACKET_TITLE,UGKP_HEAD_PACKET_LABEL,ugkp_change_packet)
+					</OnClick>
+				</Scripts>
+				<NormalTexture  file="Interface\Buttons\UI-PlusButton-Up"/>
+				<DisabledTexture file="Interface\Buttons\UI-PlusButton-Disabled"/>
+				<HighlightTexture file="Interface\Buttons\UI-PlusButton-Up" alphaMode="ADD"/>
+	</Button>
+	<Button name="UgkpReportPacket3_Edit"  inherits="UgkpReportEditButtonTemplate">
+		<Size>
+			<AbsDimension x="60" y="26"/>
+		</Size>
+		<Anchors>
+			<Anchor point="LEFT" relativeTo="$parentpacket3" relativePoint="RIGHT">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		
+	</Button>
+	<Button name="ChangePercentButton3" hidden="false">
+				<Size>
+					<AbsDimension x="16" y="16"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="UgkpReportPacket3_Edit" relativePoint="RIGHT">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						ugkp_changeNumber("3",UGKP_HEAD_PACKET_TITLE,UGKP_HEAD_PACKET_LABEL,ugkp_change_packet)
+					</OnClick>
+				</Scripts>
+				<NormalTexture  file="Interface\Buttons\UI-PlusButton-Up"/>
+				<DisabledTexture file="Interface\Buttons\UI-PlusButton-Disabled"/>
+				<HighlightTexture file="Interface\Buttons\UI-PlusButton-Up" alphaMode="ADD"/>
+	</Button>
+	<Button name="UgkpReportPacket4_Edit"  inherits="UgkpReportEditButtonTemplate">
+		<Size>
+			<AbsDimension x="60" y="26"/>
+		</Size>
+		<Anchors>
+			<Anchor point="LEFT" relativeTo="$parentpacket4" relativePoint="RIGHT">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		
+	</Button>
+	<Button name="ChangePercentButton4" hidden="false">
+				<Size>
+					<AbsDimension x="16" y="16"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="UgkpReportPacket4_Edit" relativePoint="RIGHT">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						ugkp_changeNumber("4",UGKP_HEAD_PACKET_TITLE,UGKP_HEAD_PACKET_LABEL,ugkp_change_packet)
+					</OnClick>
+				</Scripts>
+				<NormalTexture  file="Interface\Buttons\UI-PlusButton-Up"/>
+				<DisabledTexture file="Interface\Buttons\UI-PlusButton-Disabled"/>
+				<HighlightTexture file="Interface\Buttons\UI-PlusButton-Up" alphaMode="ADD"/>
+	</Button>
+	
+	
+		<Frame name="ugkp_ReportGenFrame" >
+			<Size>
+				<AbsDimension x="360" y="330"/>
+			</Size>
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="Ugkp_ReportFrame" relativePoint="TOPLEFT">
+					<Offset>
+						<AbsDimension x="220" y="-180"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			
+			<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="false">
+				<BackgroundInsets>
+					<!-- Just the background texture only -->
+					<AbsInset left="5" right="5" top="5" bottom="5"/>
+				</BackgroundInsets>
+				<TileSize>
+					<AbsValue val="16"/>
+				</TileSize>
+				<EdgeSize>
+					<AbsValue val="16"/>
+				</EdgeSize>
+			</Backdrop>
+			<Frames>
+				<Frame name="ugkp_ReportGenchildFrame">
+					<Size>
+						<AbsDimension x="260" y="512"/>
+					</Size>
+					
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+					<Frames>
+						<ScrollFrame name="ugkp_ReportGenScrollFrame" inherits="UIPanelScrollFrameTemplate">
+								<Size>
+									<!-- This also moves teh scroll bar -->
+									<AbsDimension x="325" y="316"/>
+								</Size>
+								<Anchors>
+									<Anchor point="TOPLEFT">
+										<Offset>
+											<AbsDimension x="0" y="-10"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="ARTWORK">
+										<Texture file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+											<Size>
+												<AbsDimension x="31" y="256"/>
+											</Size>
+											<Anchors>
+												<Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
+													<Offset>
+														<AbsDimension x="-2" y="5"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+											<TexCoords left="0" right="0.484375" top="0" bottom="1.0"/>
+										</Texture>
+										<Texture file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+											<Size>
+												<AbsDimension x="31" y="106"/>
+											</Size>
+											<Anchors>
+												<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT">
+													<Offset>
+														<AbsDimension x="-2" y="-2"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+											<TexCoords left="0.515625" right="1.0" top="0" bottom="0.4140625"/>
+										</Texture>
+									</Layer>
+								</Layers>
+								<ScrollChild>
+									<Frame name="ugkp_ReportGenScrollChildFrame" enableMouse="true">
+										<Size>
+											<!-- This moves the scroll bar -->
+											<AbsDimension x="260" y="145"/>
+										</Size>
+										<Anchors>
+											<Anchor point="TOPLEFT" />
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchors>
+										<Frames>
+											<EditBox name="ugkp_ReportGenBodyEditBox" letters="65535" multiLine="true" enableMouse="true" autoFocus="false">
+												<Size>
+													<!-- This is the width of the text area -->
+													<AbsDimension x="310" y="100"/>
+												</Size>
+												<Anchors>
+													<Anchor point="TOPLEFT">
+														<Offset>
+															<!-- This effects how high up the text is when the scroll bar is at the top. -->
+															<AbsDimension x="10" y="0"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+												<Scripts>
+													<OnTextChanged>
+														ScrollingEdit_OnTextChanged(self, ugkp_ReportGenScrollFrame);
+													</OnTextChanged>
+													<OnCursorChanged>
+														ScrollingEdit_OnCursorChanged(self, arg1, arg2-10, arg3, arg4);
+													</OnCursorChanged>
+													<OnUpdate>
+														ScrollingEdit_OnUpdate(ugkp_ReportGenScrollFrame);
+													</OnUpdate>
+													<OnEscapePressed>
+														this:ClearFocus();
+													</OnEscapePressed>
+													<OnClick>
+														this:SetFocus();
+													</OnClick>
+													<OnEditFocusLost>
+														HideUIPanel(DMReportFrame);
+													</OnEditFocusLost>
+												</Scripts>
+												<FontString inherits="GameTooltipTextSmall"/>
+											</EditBox>
+										</Frames>
+										<Scripts>
+											<OnMouseUp>
+												ugkp_ReportGenBodyEditBox:SetFocus();
+											</OnMouseUp> 
+										</Scripts>
+									</Frame>
+								</ScrollChild>
+							</ScrollFrame>
+					</Frames>
+				</Frame>
+			</Frames>
+			<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(1,1,1,0)
+			</OnLoad>
+			</Scripts>
+		</Frame>
+		<Button name="$parentGenReportButton1" inherits="OptionsButtonTemplate" text="UGKP_BUTTON_REPORT_GEN1">
+			<Size>
+				<AbsDimension x="120" y="20"/>
+			</Size>
+			<Anchors>
+				<Anchor point="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="20"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnClick>
+					ugkp_gen_report(1)
+				</OnClick>
+			</Scripts>
+		</Button>
+		<Button name="$parentGenReportButton2" inherits="OptionsButtonTemplate" text="UGKP_BUTTON_REPORT_GEN2">
+			<Size>
+				<AbsDimension x="120" y="20"/>
+			</Size>
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentGenReportButton1" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnClick>
+					ugkp_gen_report(2)
+				</OnClick>
+			</Scripts>
+		</Button>
+		<Button name="$parentSendReportButton" inherits="OptionsButtonTemplate" text="UGKP_BUTTON_REPORT_SEND">
+			<Size>
+				<AbsDimension x="80" y="20"/>
+			</Size>
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentGenReportButton2" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnClick>
+					ugkp_send_report()
+				</OnClick>
+			</Scripts>
+		</Button>
+	
+</Frames>
+<Scripts>
+	<OnShow>
+		ugkp_report_onshow();
+	</OnShow>
+</Scripts>
+ </Frame>
+</Ui>

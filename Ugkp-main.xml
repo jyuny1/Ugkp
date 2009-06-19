@@ -1,0 +1,433 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+	<Script file="Ugkp-localization.lua"/>
+	<Script file="Ugkp-main.lua"/>
+	<Script file="Ugkp-version.lua"/>
+	<Button name="UgkpFrameColumnHeaderTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="10" y="24"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentLeft" file="Interface\FriendsFrame\WhoFrame-ColumnTabs">
+					<Size>
+						<AbsDimension x="5" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+					<TexCoords left="0" right="0.078125" top="0" bottom="0.75"/>
+				</Texture>
+				<Texture name="$parentMiddle" file="Interface\FriendsFrame\WhoFrame-ColumnTabs">
+					<Size>
+						<AbsDimension x="53" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT"/>
+					</Anchors>
+					<TexCoords left="0.078125" right="0.90625" top="0" bottom="0.75"/>
+				</Texture>
+				<Texture name="$parentRight" file="Interface\FriendsFrame\WhoFrame-ColumnTabs">
+					<Size>
+						<AbsDimension x="4" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentMiddle" relativePoint="RIGHT"/>
+					</Anchors>
+					<TexCoords left="0.90625" right="0.96875" top="0" bottom="0.75"/>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>
+				
+			</OnClick>
+		</Scripts>
+		<ButtonText inherits="GameFontHighlightSmall">
+			<Anchors>
+				<Anchor point="LEFT">
+					<Offset>
+						<AbsDimension x="8" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</ButtonText>
+	</Button>
+	<Button name="Ugkp_RaidFrameButtonTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="298" y="31"/>
+		</Size>
+		<Frames>
+			<Frame name="$parentButtonText" setAllPoints="true">
+				<Layers>
+					<Layer level="BORDER">
+						<FontString name="$parentNameLocation" inherits="GameFontNormal">
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset>
+										<AbsDimension x="10" y="-3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+	</Button>
+	<Frame name="UGKPTabFrame" hidden="true" enableMouse="true" virtual="true">
+		<Size>
+			<AbsDimension x="768" y="384"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT">
+				<Offset>
+					<AbsDimension x="0" y="-50"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Scripts>
+			<OnMouseUp>
+				UGKPMain_OnMouseUp();
+			</OnMouseUp>
+			<OnMouseDown>
+				UGKPMain_OnMouseDown(arg1);
+			</OnMouseDown>
+			<OnHide>
+				UGKPMain_OnHide();
+			</OnHide>
+		</Scripts>
+	</Frame>
+	
+	<Frame name="UgkpButtonFrame" parent="Minimap" enableMouse="true" hidden="false" frameStrata="LOW">
+		<Size>
+			<AbsDimension x="32" y="32"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="Minimap" relativePoint="RIGHT">
+				<Offset>
+					<AbsDimension x="2" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="UgkpButton">
+				<Size>
+					<AbsDimension x="32" y="32"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				
+				<NormalTexture file="Interface\AddOns\ugkp\Images\gkpButton-Up"/>
+				<PushedTexture file="Interface\AddOns\ugkp\Images\gkpButton-Down"/>
+				<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
+				<Scripts>
+					<OnClick>
+						UGKP_Toggle(1)
+					</OnClick>
+					<OnEnter>
+						GameTooltip_SetDefaultAnchor(GameTooltip, UIParent);
+						GameTooltip:SetText("开启/关闭 Ugkp");
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:RegisterEvent("VARIABLES_LOADED");
+			</OnLoad>
+			<OnEvent>
+				UgkpButton_Init();
+				UgkpButton_UpdatePosition();
+			</OnEvent>
+		</Scripts>
+	</Frame>
+	
+	<EditBox name="UgkpEditBoxTemplate" letters="200" autoFocus="false" historyLines="256" virtual="true" >
+		<Size>
+			<AbsDimension x="200" y="26"/>
+		</Size>
+		<TextInsets>
+				<AbsInset  left="10" right="5" />
+		</TextInsets>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentLeft" file="Interface\ChatFrame\UI-ChatInputBorder-Left">
+					<Size>
+						<AbsDimension x="184" y="32"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentRight" file="Interface\ChatFrame\UI-ChatInputBorder-Right">
+					<Size>
+						<AbsDimension x="16" y="32"/>
+					</Size>
+					<Anchors>
+						<Anchor point="RIGHT"/>
+					</Anchors>
+					<TexCoords left="0.9375" right="1.0" top="0" bottom="1.0"/>
+				</Texture>
+				<Texture file="Interface\ChatFrame\UI-ChatInputBorder-Right">
+					<Size>
+						<AbsDimension x="1" y="32"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<TexCoords left="0" right="0.9375" top="0" bottom="1.0"/>
+				</Texture>
+			</Layer>
+		</Layers>
+		
+		<FontString inherits="ChatFontNormal" bytes="256"/>
+				
+		<Scripts>
+			<OnShow>
+				this:ClearFocus();
+			</OnShow>
+			<OnEnterPressed>
+				this:ClearFocus();
+			</OnEnterPressed>
+			<OnEscapePressed>
+				this:ClearFocus();
+			</OnEscapePressed>
+		</Scripts>
+	</EditBox>
+	
+	
+	<Button name="UgkpEditButtonTemplate" virtual="true" >
+		<Size>
+			<AbsDimension x="200" y="32"/>
+		</Size>
+	
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentLeft" file="Interface\ChatFrame\UI-ChatInputBorder-Left">
+					<Size>
+						<AbsDimension x="184" y="32"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentRight" file="Interface\ChatFrame\UI-ChatInputBorder-Right">
+					<Size>
+						<AbsDimension x="16" y="32"/>
+					</Size>
+					<Anchors>
+						<Anchor point="RIGHT"/>
+					</Anchors>
+					<TexCoords left="0.9375" right="1.0" top="0" bottom="1.0"/>
+				</Texture>
+				<Texture file="Interface\ChatFrame\UI-ChatInputBorder-Right">
+					<Size>
+						<AbsDimension x="1" y="32"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<TexCoords left="0" right="0.9375" top="0" bottom="1.0"/>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<FontString name="$parentText" inherits="GameFontDisable" text="" justifyH="LEFT">
+				<Size>
+					<AbsDimension x="200" y="26"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+				
+	</Button>
+	
+	
+	
+	<Frame name="UGkpMainFrame" parent="UIParent" hidden="true" toplevel="false" enableMouse="true" movable="true">
+			<Size>
+				<AbsDimension x="768" y="512"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT">
+					<Offset>
+						<AbsDimension x="0" y="-50"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Backdrop name="$parentBackdrop" bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+				<EdgeSize>
+					<AbsValue val="16"/>
+				</EdgeSize>
+				<TileSize>
+					<AbsValue val="16"/>
+				</TileSize>
+				<BackgroundInsets>
+					<AbsInset left="3" right="5" top="3" bottom="5"/>
+				</BackgroundInsets>
+			</Backdrop>
+			<Layers>
+				<Layer level="ARTWORK">
+					<FontString name="$parentTitle" inherits="GameFontNormal" text="UGKP_TITLE">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UGkpMainFrame" relativeFrom="TOPLEFT">
+								<Offset>
+									<AbsDimension x="10" y="-15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</FontString>
+					
+					<FontString name="$parentcopyright" inherits="GameFontNormal" text="UGKP_TITLE_COPYRIGHT">
+						<Anchors>
+							<Anchor point="TOPRIGHT" relativeTo="UGkpMainFrame" relativeFrom="TOPLEFT">
+								<Offset>
+									<AbsDimension x="-40" y="-15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</FontString>
+				</Layer>
+			</Layers>
+			<Frames>
+					<Button name="$parentCloseButton" inherits="UIPanelCloseButton">
+						<Anchors>
+							<Anchor point="TOPRIGHT" relativeTo="UGkpMainFrame">
+								<Offset>
+									<AbsDimension x="2" y="2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					
+					<Button name="$parentTab1" inherits="CharacterFrameTabButtonTemplate" id="1" text="UGKP_TAB_RAID">
+						<Anchors>
+							<Anchor point="CENTER" relativePoint="BOTTOMLEFT" relativeTo="UGkpMainFrame">
+								<Offset>
+									<AbsDimension x="65" y="-14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UGKPMain_SelectTab(1);</OnClick>
+						</Scripts>
+					</Button>
+			
+					<Button name="$parentTab2" inherits="CharacterFrameTabButtonTemplate" id="2" text="UGKP_TAB_SET">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab1" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UGKPMain_SelectTab(2);</OnClick>
+						</Scripts>
+					</Button>	
+					
+<!--					<Button name="$parentTab3" inherits="CharacterFrameTabButtonTemplate" id="3" text="UGKP_TAB_DEFAULT">
+					
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab2" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UGKPMain_SelectTab(3);</OnClick>
+						</Scripts>
+					</Button>	-->
+				
+			</Frames>
+			<Scripts>
+				<OnLoad>
+					UGKPMain_OnLoad();
+				</OnLoad>
+				<OnShow>
+					UGKPMain_OnShow();
+				</OnShow>
+			
+				<OnMouseUp>
+					UGKPMain_OnMouseUp();
+				</OnMouseUp>
+				<OnMouseDown>
+					UGKPMain_OnMouseDown(arg1);
+				</OnMouseDown>
+				<OnHide>
+					UGKPMain_OnHide();
+				</OnHide>
+				
+		</Scripts>
+	</Frame>
+        
+	<Button name="UGKP_HelpTemplate" virtual="true" hidden="false">
+		<Size>
+			<AbsDimension x="18" y="16"/>
+		</Size>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parentText" inherits="GameFontHighlightSmall" justifyH="RIGHT" text="[?]">
+					<Anchors>
+						<Anchor point="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnEnter>
+				getglobal(this:GetName() .. "Text"):SetTextColor(1, 0.82, 0);
+				GEM_Help_SetTooltip();
+				GameTooltip:SetText(this.text, 1, 0.72, 0, nil);
+			</OnEnter>
+			<OnLeave>
+				getglobal(this:GetName() .. "Text"):SetTextColor(1, 1, 1);
+				GameTooltip:Hide();						
+			</OnLeave>
+			<OnLoad>
+				this.text = "";
+				GEM_Help_LoadText();
+			</OnLoad>
+		</Scripts>
+	</Button>
+        
+</Ui>

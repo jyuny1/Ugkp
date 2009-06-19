@@ -1,0 +1,455 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+
+
+<Script file="Ugkp-Raid-main.lua"/>
+
+<Button name="UgkpRaidListButtonTemplate" virtual="true" >
+		<Size>
+			<AbsDimension x="200" y="32"/>
+		</Size>
+		
+	<Frames>
+	<CheckButton name="$parentCheck" inherits="OptionsCheckButtonTemplate"  virtual="true">
+	<Size>
+		<AbsDimension x="26" y="26"/>
+	</Size>
+	<Anchors>
+		<Anchor point="TOPLEFT">
+			<Offset>
+				<AbsDimension x="7" y="0"/>
+			</Offset>
+		</Anchor>
+	</Anchors>
+	<HitRectInsets>
+		<AbsInset left="0" right="0" top="0" bottom="0"/>
+	</HitRectInsets>
+	<Layers>
+		<Layer level="BACKGROUND">
+			<FontString name="$parentId" inherits="GameFontNormal" justifyH="LEFT" hidden="true">
+				<Size>
+					<AbsDimension x="0" y="0"/>
+				</Size>
+			</FontString>
+		</Layer>
+	</Layers>
+	</CheckButton>
+	<Button name="$parentButton" >
+		<Size>
+			<AbsDimension x="110" y="32"/>
+		</Size>
+		<Anchors>
+			<Anchor point="LEFT" relativeTo="$parentCheck" relativePoint="RIGHT">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				
+				<FontString name="$parentId" inherits="GameFontNormal" justifyH="LEFT" hidden="true">
+					<Size>
+						<AbsDimension x="0" y="0"/>
+					</Size>
+				</FontString>
+				
+				<FontString name="$parentName" inherits="GameFontNormal" justifyH="LEFT" text="">
+					<Size>
+						<AbsDimension x="110" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<HighlightTexture file="Interface\FriendsFrame\UI-FriendsFrame-HighlightBar" alphaMode="ADD">
+			<Size>
+				<AbsDimension x="110" y="16"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT">
+					<Offset>
+						<AbsDimension x="0" y="-7"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</HighlightTexture>
+		<Scripts>
+
+		<OnClick>
+			UgkpChangeRaid()
+		</OnClick>
+		
+		</Scripts>
+	</Button>
+	</Frames>
+	
+</Button>
+
+
+<Frame name="Ugkpraidtabframe" hidden="true" enableMouse="true" virtual="true">
+	<Size>
+		<AbsDimension x="598" y="400"/>
+	</Size>
+	<Anchors>
+		<Anchor point="TOPLEFT">
+			<Offset>
+				<AbsDimension x="0" y="0"/>
+			</Offset>
+		</Anchor>
+	</Anchors>
+	<Scripts>
+
+		<OnMouseUp>
+			UGKPMain_OnMouseUp();
+		</OnMouseUp>
+		<OnMouseDown>
+			UGKPMain_OnMouseDown(arg1);
+		</OnMouseDown>
+		<OnHide>
+			UGKPMain_OnHide();
+		</OnHide>
+	</Scripts>
+</Frame>
+
+
+
+ <Frame name="Ugkp_RaidMainFrame" parent="UGkpMainFrame" inherits="UGKPTabFrame">
+
+<Frames>
+
+					
+			<Frame name="UgkpRaidListBorderFrame" inherits="OptionsBoxTemplate">
+			<Size>
+				<AbsDimension x="150" y="200"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT" relativeTo="Ugkp_RaidMainFrame" relativePoint="TOPLEFT">
+					<Offset>
+						<AbsDimension x="10" y="-15"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Layers>
+				<Layer level="BACKGROUND">
+					<FontString name="UgkpRaidList_String" inherits="GameFontNormal" justifyH="LEFT" text="UGKP_TEXT_RAID_LIST">
+						<Size>
+							<AbsDimension x="220" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="BOTTOMLEFT" relativeTo="UgkpRaidListBorderFrame" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="0" y="4" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+                                                
+					</FontString>
+				</Layer>
+			</Layers>
+			<Frames>
+				<Button name="UgkpRaidFrameListButton1" inherits="UgkpRaidListButtonTemplate" id="1">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpRaidListBorderFrame"  relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="4" y="-10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+				</Button>
+				
+				<Button name="UgkpRaidFrameListButton2" inherits="UgkpRaidListButtonTemplate" id="2">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpRaidFrameListButton1" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+				</Button>
+				
+				<Button name="UgkpRaidFrameListButton3" inherits="UgkpRaidListButtonTemplate" id="3">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpRaidFrameListButton2" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+				</Button>
+				
+				<Button name="UgkpRaidFrameListButton4" inherits="UgkpRaidListButtonTemplate" id="4">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpRaidFrameListButton3" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+				</Button>
+				
+				<Button name="UgkpRaidFrameListButton5" inherits="UgkpRaidListButtonTemplate" id="5">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpRaidFrameListButton4" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+				</Button>
+				<Button name="Ugkp_AddRaid_Button" inherits="UIPanelButtonTemplate" text="UGKP_BUTTON_RAID_ADD">
+				<Size>
+					<AbsDimension x="60" y="21"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="UgkpRaidFrameListButton5" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						ugkp_CreateNewRaid()
+					</OnClick>
+				</Scripts>
+			</Button>
+			
+			<Button name="Ugkp_RaidDelete_Button" inherits="UIPanelButtonTemplate" text="UGKP_BUTTON_RAID_DELETE">
+				<Size>
+					<AbsDimension x="60" y="21"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="Ugkp_AddRaid_Button" relativePoint="RIGHT">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						getglobal("UGKP_AcceptDeleteFrametype"):SetText("4");
+						UGKP_AcceptDeleteFrame:Show();
+						
+					</OnClick>
+				</Scripts>
+			</Button>
+			</Frames>
+			<Scripts>
+				<OnLoad>
+					this:SetBackdropColor(1,1,1,0)
+				</OnLoad>
+			</Scripts>
+			
+			
+		</Frame>
+		
+		<Frame name="UgkpRaidBorderFrame" inherits="OptionsBoxTemplate">
+			<Size>
+				<AbsDimension x="598" y="400"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT" relativeTo="UgkpRaidListBorderFrame" relativePoint="TOPRIGHT">
+					<Offset>
+						<AbsDimension x="2" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Layers>
+				<Layer level="BACKGROUND">
+					<FontString name="UgkpRaidHeaderString" inherits="GameFontNormal" justifyH="LEFT" text="UGKP_TEXT_RAID_HEADER">
+						<Size>
+							<AbsDimension x="550" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="BOTTOMLEFT" relativeTo="UgkpRaidBorderFrame" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="0" y="4" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+                                                
+					</FontString>
+				</Layer>
+			</Layers>
+			<Frames>
+			
+					<Button name="$parentTab1" inherits="CharacterFrameTabButtonTemplate" id="1" text="UGKP_TAB_RAID">
+						<Anchors>
+							<Anchor point="CENTER" relativePoint="BOTTOMLEFT" relativeTo="UgkpRaidBorderFrame">
+								<Offset>
+									<AbsDimension x="45" y="-14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpRaidMain_SelectTab(1);</OnClick>
+						</Scripts>
+					</Button>
+			
+					<Button name="$parentTab2" inherits="CharacterFrameTabButtonTemplate" id="2" text="UGKP_TAB_MEMBER">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab1" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpRaidMain_SelectTab(2);</OnClick>
+						</Scripts>
+					</Button>	
+					
+					<Button name="$parentTab3" inherits="CharacterFrameTabButtonTemplate" id="3" text="UGKP_TAB_ITEM">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab2" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpRaidMain_SelectTab(3);</OnClick>
+						</Scripts>
+					</Button>
+					
+					<Button name="$parentTab4" inherits="CharacterFrameTabButtonTemplate" id="4" text="UGKP_TAB_PACKET">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab3" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpRaidMain_SelectTab(4);</OnClick>
+						</Scripts>
+					</Button>
+					
+					<Button name="$parentTab5" inherits="CharacterFrameTabButtonTemplate" id="5" text="UGKP_TAB_REPORT">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab4" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpRaidMain_SelectTab(5);</OnClick>
+						</Scripts>
+					</Button>
+					
+					<Button name="$parentTab6" inherits="CharacterFrameTabButtonTemplate" id="6" text="UGKP_TAB_CHANNEL">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab5" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpRaidMain_SelectTab(6);</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTab7" inherits="CharacterFrameTabButtonTemplate" id="7" text="UGKP_TAB_GKP">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab6" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpRaidMain_SelectTab(7);</OnClick>
+						</Scripts>
+					</Button>
+			</Frames>
+			<Scripts>
+				<OnLoad>
+					this:SetBackdropColor(1,1,1,0)
+				</OnLoad>
+			</Scripts>
+		</Frame>
+		
+		
+		<Frame name="UgkpLogoBorderFrame" inherits="OptionsBoxTemplate">
+			<Size>
+				<AbsDimension x="150" y="80"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT" relativeTo="UgkpRaidListBorderFrame" relativePoint="BOTTOMLEFT">
+					<Offset>
+						<AbsDimension x="0" y="-10"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Layers>
+				<Layer level="BACKGROUND">
+					<Texture file="Interface\AddOns\Ugkp\Images\duniuLogo.blp">
+						<Size>
+							<AbsDimension x="128" y="64"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset>
+									<AbsDimension x="9" y="-9"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Texture>
+				</Layer>
+				
+				<Layer level="NaWou_DiJal">
+					<Texture file="Interface\AddOns\Ugkp\Images\duniuLogo_D.blp">
+						<Size>
+							<AbsDimension x="64" y="64"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset>
+									<AbsDimension x="9" y="-9"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Texture>
+				</Layer>
+				
+			</Layers>
+
+			
+			<Scripts>
+				<OnLoad>
+					this:SetBackdropColor(1,1,1,0)
+				</OnLoad>
+			</Scripts>
+		</Frame>				
+</Frames>
+<Scripts>
+	<OnLoad>
+		Ugkp_RaidMain_OnLoad();
+	</OnLoad>
+	<OnShow>
+		Ugkp_RaidMain_OnShow();
+	</OnShow>
+	<OnEvent>
+	  	Ugkp_RaidMain_OnEvent(event);
+	</OnEvent> 
+	<OnHide>
+		PlaySound("UChatScrollButton");
+	</OnHide>
+</Scripts>
+ </Frame>
+ 
+ 
+ </Ui>

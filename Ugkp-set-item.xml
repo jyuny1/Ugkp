@@ -1,0 +1,565 @@
+ <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+
+
+<Script file="Ugkp-set-item.lua"/>
+
+<CheckButton name="UgkpItemCheckButtonTemplate" inherits="OptionsCheckButtonTemplate" virtual="true" >
+	<Scripts>
+		<OnClick>
+			ugkp_change_item_check();
+		</OnClick>
+		
+	</Scripts>	
+</CheckButton>
+
+ <Frame name="Ugkp_SetItemFrame" parent="UgkpItemSetBorderFrame" inherits="UgkpRaidTabFrame" >
+	<Frames>
+		
+		<CheckButton name="$parentItemNameButton1" inherits="UgkpItemCheckButtonTemplate" id="1">
+			<Anchors>
+				<Anchor point="TOPLEFT" relativeTo="Ugkp_SetItemFrame"  relativePoint="TOPLEFT">
+					<Offset>
+						<AbsDimension x="10" y="-10"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("aaa");
+				</OnLoad>
+				
+			</Scripts>	
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton2" inherits="UgkpItemCheckButtonTemplate" id="2">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton1" relativePoint="RIGHT" >
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("bbb");
+				</OnLoad>
+				
+			</Scripts>
+			
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton3" inherits="UgkpItemCheckButtonTemplate" id="3">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton2" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+			<OnLoad>
+				getglobal(this:GetName().."Text"):SetText("ccc");
+			</OnLoad>
+		</Scripts>
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton4" inherits="UgkpItemCheckButtonTemplate" id="4">
+			<Anchors>
+				<Anchor point="TOP" relativeTo="$parentItemNameButton1"  relativePoint="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("aaa");
+				</OnLoad>
+				
+			</Scripts>	
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton5" inherits="UgkpItemCheckButtonTemplate" id="5">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton4" relativePoint="RIGHT" >
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("bbb");
+				</OnLoad>
+				
+			</Scripts>
+			
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton6" inherits="UgkpItemCheckButtonTemplate" id="6">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton5" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+			<OnLoad>
+				getglobal(this:GetName().."Text"):SetText("ccc");
+			</OnLoad>
+		</Scripts>
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton7" inherits="UgkpItemCheckButtonTemplate" id="7">
+			<Anchors>
+				<Anchor point="TOP" relativeTo="$parentItemNameButton4"  relativePoint="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("aaa");
+				</OnLoad>
+				
+			</Scripts>	
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton8" inherits="UgkpItemCheckButtonTemplate" id="8">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton7" relativePoint="RIGHT" >
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("bbb");
+				</OnLoad>
+				
+			</Scripts>
+			
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton9" inherits="UgkpItemCheckButtonTemplate" id="9">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton8" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+			<OnLoad>
+				getglobal(this:GetName().."Text"):SetText("ccc");
+			</OnLoad>
+		</Scripts>
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton10" inherits="UgkpItemCheckButtonTemplate" id="10">
+			<Anchors>
+				<Anchor point="TOP" relativeTo="$parentItemNameButton7"  relativePoint="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("aaa");
+				</OnLoad>
+				
+			</Scripts>	
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton11" inherits="UgkpItemCheckButtonTemplate" id="11">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton10" relativePoint="RIGHT" >
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("bbb");
+				</OnLoad>
+				
+			</Scripts>
+			
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton12" inherits="UgkpItemCheckButtonTemplate" id="12">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton11" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+			<OnLoad>
+				getglobal(this:GetName().."Text"):SetText("ccc");
+			</OnLoad>
+		</Scripts>
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton13" inherits="UgkpItemCheckButtonTemplate" id="13">
+			<Anchors>
+				<Anchor point="TOP" relativeTo="$parentItemNameButton10"  relativePoint="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("aaa");
+				</OnLoad>
+				
+			</Scripts>	
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton14" inherits="UgkpItemCheckButtonTemplate" id="14">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton13" relativePoint="RIGHT" >
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("bbb");
+				</OnLoad>
+				
+			</Scripts>
+			
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton15" inherits="UgkpItemCheckButtonTemplate" id="15">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton14" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+			<OnLoad>
+				getglobal(this:GetName().."Text"):SetText("ccc");
+			</OnLoad>
+		</Scripts>
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton16" inherits="UgkpItemCheckButtonTemplate" id="16">
+			<Anchors>
+				<Anchor point="TOP" relativeTo="$parentItemNameButton13"  relativePoint="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("aaa");
+				</OnLoad>
+				
+			</Scripts>	
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton17" inherits="UgkpItemCheckButtonTemplate" id="17">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton16" relativePoint="RIGHT" >
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("bbb");
+				</OnLoad>
+				
+			</Scripts>
+			
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton18" inherits="UgkpItemCheckButtonTemplate" id="18">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton17" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+			<OnLoad>
+				getglobal(this:GetName().."Text"):SetText("ccc");
+			</OnLoad>
+		</Scripts>
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton19" inherits="UgkpItemCheckButtonTemplate" id="19">
+			<Anchors>
+				<Anchor point="TOP" relativeTo="$parentItemNameButton16"  relativePoint="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("aaa");
+				</OnLoad>
+				
+			</Scripts>	
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton20" inherits="UgkpItemCheckButtonTemplate" id="20">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton19" relativePoint="RIGHT" >
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("bbb");
+				</OnLoad>
+				
+			</Scripts>
+			
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton21" inherits="UgkpItemCheckButtonTemplate" id="21">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton20" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+			<OnLoad>
+				getglobal(this:GetName().."Text"):SetText("ccc");
+			</OnLoad>
+		</Scripts>
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton22" inherits="UgkpItemCheckButtonTemplate" id="22">
+			<Anchors>
+				<Anchor point="TOP" relativeTo="$parentItemNameButton19"  relativePoint="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("aaa");
+				</OnLoad>
+				
+			</Scripts>	
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton23" inherits="UgkpItemCheckButtonTemplate" id="23">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton22" relativePoint="RIGHT" >
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("bbb");
+				</OnLoad>
+				
+			</Scripts>
+			
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton24" inherits="UgkpItemCheckButtonTemplate" id="24">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton23" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+			<OnLoad>
+				getglobal(this:GetName().."Text"):SetText("ccc");
+			</OnLoad>
+		</Scripts>
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton25" inherits="UgkpItemCheckButtonTemplate" id="25">
+			<Anchors>
+				<Anchor point="TOP" relativeTo="$parentItemNameButton22"  relativePoint="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("aaa");
+				</OnLoad>
+				
+			</Scripts>	
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton26" inherits="UgkpItemCheckButtonTemplate" id="26">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton25" relativePoint="RIGHT" >
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("bbb");
+				</OnLoad>
+				
+			</Scripts>
+			
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton27" inherits="UgkpItemCheckButtonTemplate" id="27">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton26" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+			<OnLoad>
+				getglobal(this:GetName().."Text"):SetText("ccc");
+			</OnLoad>
+		</Scripts>
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton28" inherits="UgkpItemCheckButtonTemplate" id="28">
+			<Anchors>
+				<Anchor point="TOP" relativeTo="$parentItemNameButton25"  relativePoint="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("aaa");
+				</OnLoad>
+				
+			</Scripts>	
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton29" inherits="UgkpItemCheckButtonTemplate" id="29">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton28" relativePoint="RIGHT" >
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("bbb");
+				</OnLoad>
+				
+			</Scripts>
+			
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton30" inherits="UgkpItemCheckButtonTemplate" id="30">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton29" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+			<OnLoad>
+				getglobal(this:GetName().."Text"):SetText("ccc");
+			</OnLoad>
+		</Scripts>
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton31" inherits="UgkpItemCheckButtonTemplate" id="31">
+			<Anchors>
+				<Anchor point="TOP" relativeTo="$parentItemNameButton28"  relativePoint="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("aaa");
+				</OnLoad>
+				
+			</Scripts>	
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton32" inherits="UgkpItemCheckButtonTemplate" id="32">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton31" relativePoint="RIGHT" >
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("bbb");
+				</OnLoad>
+				
+			</Scripts>
+			
+		</CheckButton>
+		
+		<CheckButton name="$parentItemNameButton33" inherits="UgkpItemCheckButtonTemplate" id="33">
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="$parentItemNameButton32" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="150" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+			<OnLoad>
+				getglobal(this:GetName().."Text"):SetText("ccc");
+			</OnLoad>
+		</Scripts>
+		</CheckButton>
+	</Frames>
+	<Scripts>
+	<OnLoad>
+		Ugkp_ItemSet_Onload();
+	</OnLoad>
+</Scripts>
+ </Frame>
+ 
+ </Ui>

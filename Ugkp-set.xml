@@ -1,0 +1,312 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+
+<Script file="Ugkp-set.lua"/>
+<Frame name="Ugkp_Set" parent="UGkpMainFrame" inherits="UGKPTabFrame">
+		<Layer level="ARTWORK">
+				<Texture name="UgkpOptionsFrameHeader" file="Interface\DialogFrame\UI-DialogBox-Header">
+					<Size>
+						<AbsDimension x="256" y="64"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="12"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString inherits="GameFontNormal" text="UGKP_SET">
+					<Anchors>
+						<Anchor point="TOP" relativeTo="UgkpOptionsFrameHeader">
+							<Offset>
+								<AbsDimension x="0" y="-14"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		<Frames>
+		<CheckButton name="UgkpOptionsFrameToggleButton" inherits="OptionsCheckButtonTemplate" checked="true">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="10" y="-40"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						getglobal(this:GetName().."Text"):SetText(UGKP_OPTION_FRAME_HEADER);
+					</OnLoad>
+					<OnClick>
+						UgkpButton_Toggle();
+					</OnClick>
+				</Scripts>
+			</CheckButton>
+
+			<Slider name="UgkpButtonPos" inherits="OptionsSliderTemplate">
+				<Size>
+					<AbsDimension x="150" y="16"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="10" y="-100" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						getglobal(this:GetName().."Text");
+						getglobal(this:GetName().."Text"):SetText(UGKP_ICON_POSITION);
+						getglobal(this:GetName().."High"):SetText();
+						getglobal(this:GetName().."Low"):SetText();
+						UgkpButtonPos:SetMinMaxValues(0,360);
+						UgkpButtonPos:SetValueStep(1);
+					</OnLoad>
+					<OnValueChanged>
+						UgkpOptions.UgkpButtonPosition = UgkpButtonPos:GetValue();
+						UgkpButton_UpdatePosition();
+					</OnValueChanged>
+				</Scripts>
+			</Slider>
+			
+			<Frame name="Ugkp_BrowseDropDown" inherits="UIDropDownMenuTemplate" id="1">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="UgkpButtonPos" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="-10" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString inherits="GameFontHighlightSmall" text="RARITY">
+							<Anchors>
+								<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+									<Offset>
+										<AbsDimension x="20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnLoad>
+						Ugkp_BrowseDropDown_OnLoad();
+					</OnLoad>
+					<OnShow>
+						Ugkp_BrowseDropDown_OnLoad();
+					</OnShow>
+				</Scripts>
+			</Frame>
+			
+			<Frame name="Ugkp_CoinDropDown" inherits="UIDropDownMenuTemplate" id="1">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="Ugkp_BrowseDropDown" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString inherits="GameFontHighlightSmall" text="UGKP_MESSAGE_DLEVEL">
+							<Anchors>
+								<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+									<Offset>
+										<AbsDimension x="20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnLoad>
+						Ugkp_CoinDropDown_OnLoad()
+					</OnLoad>
+					<OnShow>
+						Ugkp_CoinDropDown_OnLoad()
+					</OnShow>
+				</Scripts>
+		</Frame>
+		
+		<Frame name="Ugkp_ChannelDropDown" inherits="UIDropDownMenuTemplate" id="1">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="Ugkp_CoinDropDown" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString inherits="GameFontHighlightSmall" text="UGKP_MESSAGE_CHANNEL">
+							<Anchors>
+								<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+									<Offset>
+										<AbsDimension x="20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnLoad>
+						Ugkp_ChannelDropDown_OnLoad()
+					</OnLoad>
+					<OnShow>
+						Ugkp_ChannelDropDown_OnLoad()
+					</OnShow>
+				</Scripts>
+		</Frame>
+		
+		
+		<Frame name="UgkpItemSetBorderFrame" inherits="OptionsBoxTemplate">
+			<Size>
+				<AbsDimension x="598" y="400"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT">
+					<Offset>
+						<AbsDimension x="160" y="-20"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Layers>
+				<Layer level="BACKGROUND">
+					<FontString name="UgkpItemSetHeaderString" inherits="GameFontNormal" justifyH="LEFT" text="UGKP_TEXT_ITEMSET_HEADER">
+						<Size>
+							<AbsDimension x="550" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="BOTTOMLEFT" relativeTo="UgkpRaidBorderFrame" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="0" y="4" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+                                                
+					</FontString>
+				</Layer>
+			</Layers>
+			<Frames>
+			
+				<Button name="$parentTab1" inherits="CharacterFrameTabButtonTemplate" id="1" text="UGKP_TAB_RAID">
+						<Anchors>
+							<Anchor point="CENTER" relativePoint="BOTTOMLEFT" relativeTo="UgkpItemSetBorderFrame">
+								<Offset>
+									<AbsDimension x="45" y="-14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpItemSet_SelectTab(1);</OnClick>
+						</Scripts>
+					</Button>
+			
+					<Button name="$parentTab2" inherits="CharacterFrameTabButtonTemplate" id="2" text="UGKP_TAB_MEMBER">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab1" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpItemSet_SelectTab(2);</OnClick>
+						</Scripts>
+					</Button>	
+					
+					<Button name="$parentTab3" inherits="CharacterFrameTabButtonTemplate" id="3" text="UGKP_TAB_ITEM">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab2" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpItemSet_SelectTab(3);</OnClick>
+						</Scripts>
+					</Button>
+					
+					<Button name="$parentTab4" inherits="CharacterFrameTabButtonTemplate" id="4" text="UGKP_TAB_GKP">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab3" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpItemSet_SelectTab(4);</OnClick>
+						</Scripts>
+					</Button>
+					
+					<Button name="$parentTab5" inherits="CharacterFrameTabButtonTemplate" id="5" text="UGKP_TAB_CHANNEL">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab4" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpItemSet_SelectTab(5);</OnClick>
+						</Scripts>
+					</Button>
+					
+					<Button name="$parentTab6" inherits="CharacterFrameTabButtonTemplate" id="6" text="UGKP_TAB_CHANNEL">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab5" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpItemSet_SelectTab(6);</OnClick>
+						</Scripts>
+					</Button>
+					
+					<Button name="$parentTab7" inherits="CharacterFrameTabButtonTemplate" id="7" text="UGKP_TAB_CHANNEL">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTab6" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-14" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>UgkpItemSet_SelectTab(7);</OnClick>
+						</Scripts>
+					</Button>
+										
+					
+					
+			</Frames>
+			<Scripts>
+				<OnLoad>
+					this:SetBackdropColor(1,1,1,0)
+				</OnLoad>
+			</Scripts>
+		</Frame>	
+</Frames>
+<Scripts>
+	<OnLoad>
+		Ugkp_Set_Onload();
+	</OnLoad>
+	<OnShow>
+		Ugkp_Set_OnShow()
+	</OnShow>
+</Scripts>
+
+ </Frame>
+ 
+ 
+ </Ui>

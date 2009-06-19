@@ -1,0 +1,5 @@
+<Bindings>
+	<Binding name="UGKP_TOGGLE" header="UGKP_TITLE">
+		ugkp_dkp_show();
+	</Binding>
+</Bindings>

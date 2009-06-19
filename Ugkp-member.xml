@@ -1,0 +1,1267 @@
+  <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+	<Script file="Ugkp-member.lua"/>
+	<Button name="UgkpMemberListButtonTemplate" virtual="true" hidden="true" >
+		<Size>
+			<AbsDimension x="560" y="32"/>
+		</Size>
+		<Layers>
+			<Layer level="BORDER">
+				<FontString name="$parentName" inherits="GameFontNormal" justifyH="LEFT" text="">
+					<Size>
+						<AbsDimension x="100" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="40" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName1" inherits="GameFontNormal" justifyH="LEFT" text="" hidden="true"/>
+				
+				<FontString name="$parentPrecent" inherits="GameFontNormal" justifyH="LEFT" text="">
+					<Size>
+						<AbsDimension x="40" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentName" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="20" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentBro" inherits="GameFontNormal" justifyH="LEFT" text="">
+					<Size>
+						<AbsDimension x="40" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentPrecent" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="20" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+					
+				<FontString name="$parentLevel" inherits="GameFontHighlightSmall" justifyH="LEFT" text="">
+					<Size>
+						<AbsDimension x="50" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentBro" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentClass" inherits="GameFontHighlightSmall" justifyH="LEFT" text="">
+					<Size>
+						<AbsDimension x="70" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentLevel" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="-7" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentMap" inherits="GameFontHighlightSmall" justifyH="LEFT" text=""  hidden="true">
+					<Size>
+						<AbsDimension x="140" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentClass" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentJoinTime" inherits="GameFontHighlightSmall" justifyH="LEFT" text="" >
+					<Size>
+						<AbsDimension x="40" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentClass" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			
+				
+				<FontString name="$parentTotalTime" inherits="GameFontHighlightSmall" justifyH="LEFT" text="">
+					<Size>
+						<AbsDimension x="80" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentJoinTime" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentPdkp" inherits="GameFontHighlightSmall" justifyH="LEFT" text="" hidden="true">
+					<Size>
+						<AbsDimension x="40" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentTotalTime" relativePoint="RIGHT" >
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentCdkp" inherits="GameFontHighlightSmall" justifyH="LEFT" text="" hidden="true">
+					<Size>
+						<AbsDimension x="40" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentPdkp" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentLdkp" inherits="GameFontHighlightSmall" justifyH="LEFT" text="12" hidden="true">
+					<Size>
+						<AbsDimension x="40" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentCdkp" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentDeleteDkpText" inherits="GameFontNormal" justifyH="LEFT" text="X" hidden="true">
+					<Size>
+						<AbsDimension x="20" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentTotalTime" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="35" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+
+			</Layer>
+		</Layers>
+		<Frames>
+			
+			<Button name="$parentAddDkp" hidden="false">
+				<Size>
+					<AbsDimension x="16" y="16"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="$parentTotalTime" relativePoint="RIGHT">
+						<Offset>
+							<AbsDimension x="16" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						getglobal("UgkpAddMember"):SetText(getglobal("UgkpMemberFrameListButton"..this:GetParent():GetID().."Name1"):GetText());
+						UgkpAddDkpFrame:Show();
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:ClearLines();
+						GameTooltip:AddLine(UGKP_TOOLTIP_MEMBER_GKPCHANGE, 1, 0.7, 0);
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();						
+					</OnLeave>
+				</Scripts>
+				<NormalTexture  file="Interface\Buttons\UI-PlusButton-Up"/>
+				<DisabledTexture file="Interface\Buttons\UI-PlusButton-Disabled"/>
+				<HighlightTexture file="Interface\Buttons\UI-PlusButton-Up" alphaMode="ADD"/>
+			</Button>
+			
+			
+			<Button name="$parentChangePercent" hidden="false">
+				<Size>
+					<AbsDimension x="16" y="16"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="$parentPrecent" relativePoint="LEFT">
+						<Offset>
+							<AbsDimension x="-20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						--getglobal("UgkpAddMember"):SetText(getglobal("UgkpMemberFrameListButton"..this:GetParent():GetID().."Name1"):GetText());
+						ugkp_changeNumber(getglobal("UgkpMemberFrameListButton"..this:GetParent():GetID().."Name1"):GetText(),UGKP_HEAD_PRECENT_TITLE,UGKP_HEAD_MEMBER_PRECENT,ugkp_change_precent)
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:ClearLines();
+						GameTooltip:AddLine(UGKP_HEAD_PRECENT_TITLE, 1, 0.7, 0);
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();						
+					</OnLeave>
+				</Scripts>
+				<NormalTexture  file="Interface\Buttons\UI-PlusButton-Up"/>
+				<DisabledTexture file="Interface\Buttons\UI-PlusButton-Disabled"/>
+				<HighlightTexture file="Interface\Buttons\UI-PlusButton-Up" alphaMode="ADD"/>
+			</Button>
+			
+			
+			<Button name="$parentChangeBro" hidden="false">
+				<Size>
+					<AbsDimension x="16" y="16"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="$parentBro" relativePoint="LEFT">
+						<Offset>
+							<AbsDimension x="-20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						ugkp_changeNumber(getglobal("UgkpMemberFrameListButton"..this:GetParent():GetID().."Name1"):GetText(),UGKP_HEAD_BRO_TITLE,UGKP_HEAD_BRO_TITLE,ugkp_change_bro)
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:ClearLines();
+						GameTooltip:AddLine(UGKP_HEAD_BRO_TITLE, 1, 0.7, 0);
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();						
+					</OnLeave>
+				</Scripts>
+				<NormalTexture  file="Interface\Buttons\UI-PlusButton-Up"/>
+				<DisabledTexture file="Interface\Buttons\UI-PlusButton-Disabled"/>
+				<HighlightTexture file="Interface\Buttons\UI-PlusButton-Up" alphaMode="ADD"/>
+			</Button>
+			
+			
+			<Button name="$parentDeleteDkp" hidden="true">
+				<Size>
+					<AbsDimension x="16" y="16"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="$parentTotalTime" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="35" y="0"/>
+							</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						getglobal("UgkpAddMember"):SetText(getglobal("UgkpMemberFrameListButton"..this:GetParent():GetID().."Name1"):GetText());
+						getglobal("UGKP_AcceptDeleteFrametype"):SetText("1");
+						UGKP_AcceptDeleteFrame:Show();
+						
+					</OnClick>
+					<OnEnter>
+						getglobal(this:GetName() .. "Text"):SetTextColor(255, 255, 0);
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:ClearLines();
+						GameTooltip:AddLine(UGKP_BUTTON_MEMBER_DELETE, 1, 0.7, 0);
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLoad>
+						getglobal(this:GetName() .. "Text"):SetTextColor(1, 0.7, 0);
+					</OnLoad>
+					<OnLeave>
+						getglobal(this:GetName() .. "Text"):SetTextColor(1, 0.7, 0);
+						GameTooltip:Hide();						
+					</OnLeave>
+				</Scripts>
+			</Button>
+		
+			<CheckButton name="$parentCheck" inherits="OptionsCheckButtonTemplate"  virtual="true">
+				<Size>
+					<AbsDimension x="26" y="26"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="0" y="-3"/>
+							</Offset>
+					</Anchor>
+				</Anchors>
+				<HitRectInsets>
+					<AbsInset left="0" right="0" top="0" bottom="0"/>
+				</HitRectInsets>
+				<Scripts>
+					<OnClick>
+						selectDistribute();
+					</OnClick>
+				</Scripts>
+			</CheckButton>
+			
+		</Frames>
+		<HighlightTexture file="Interface\FriendsFrame\UI-FriendsFrame-HighlightBar" alphaMode="ADD" justifyH="LEFT">
+			<Size>
+				<AbsDimension x="450" y="16"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOP">
+					<Offset>
+						<AbsDimension x="5" y="-2"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</HighlightTexture>
+	</Button>
+ <Frame name="Ugkp_MemberFrame" parent="UgkpRaidBorderFrame" inherits="UgkpRaidTabFrame">
+		<Frames>
+				<Button name="UgkpMemberFrameColumnHeader12" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_MEMBER_HEAD_DIS">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="Ugkp_MemberFrame" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="5" y="-10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							
+							<OnLoad>
+								Ugkp_setButtonWidth(50, this);
+								
+							</OnLoad>
+							
+						</Scripts>
+				</Button>
+				
+				<Button name="UgkpMemberFrameColumnHeader2" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_NAME">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberFrameColumnHeader12" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								UgkpSortOptions_ToggleDkp("online");
+								Ugkp_UpdateMember();
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(100, this);
+							</OnLoad>
+						</Scripts>
+					</Button>
+					<Button name="UgkpMemberFrameColumnHeader13" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_PRECENT">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberFrameColumnHeader2" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								UgkpSortOptions_ToggleDkp("precent");
+								Ugkp_UpdateMember();
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(60, this);
+							</OnLoad>
+						</Scripts>
+					</Button>
+					<Button name="UgkpMemberFrameColumnHeader14" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_BRO">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberFrameColumnHeader13" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								UgkpSortOptions_ToggleDkp("bro");
+								Ugkp_UpdateMember();
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(60, this);
+							</OnLoad>
+						</Scripts>
+					</Button>
+					<Button name="UgkpMemberFrameColumnHeader3" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_LEVEL">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberFrameColumnHeader14" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								UgkpSortOptions_ToggleDkp("level");
+								Ugkp_UpdateMember();
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(50, this);
+							</OnLoad>
+							
+						</Scripts>
+					</Button>
+					<Button name="UgkpMemberFrameColumnHeader4" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_CLASS">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberFrameColumnHeader3" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								UgkpSortOptions_ToggleDkp("class");
+								Ugkp_UpdateMember();
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(70, this);
+							</OnLoad>
+							
+						</Scripts>
+					</Button>
+					<Button name="UgkpMemberFrameColumnHeader5" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_MAP"  hidden="true">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberFrameColumnHeader4" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								UgkpSortOptions_ToggleDkp("zone");
+								Ugkp_UpdateMember();
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(140, this);
+							</OnLoad>
+							
+						</Scripts>
+					</Button>
+						
+					<Button name="UgkpMemberFrameColumnHeader6" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_JOINTIME">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberFrameColumnHeader4" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								UgkpSortOptions_ToggleDkp("jointime");
+								Ugkp_UpdateMember();
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(40, this);
+							</OnLoad>
+							
+						</Scripts>
+					</Button>
+									
+					<Button name="UgkpMemberFrameColumnHeader7" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_LEFTTIME">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberFrameColumnHeader6" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								UgkpSortOptions_ToggleDkp("totaltime");
+								Ugkp_UpdateMember();
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(80, this);
+							</OnLoad>
+							
+						</Scripts>
+					</Button>
+						<Button name="UgkpMemberFrameColumnHeader8" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_PGKP" hidden="true">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberFrameColumnHeader7" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								UgkpSortOptions_ToggleDkp("pdkp");
+								Ugkp_UpdateMember();
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(40, this);
+							</OnLoad>
+							
+						</Scripts>
+					</Button>
+						<Button name="UgkpMemberFrameColumnHeader9" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_CGKP"  hidden="true">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberFrameColumnHeader8" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								UgkpSortOptions_ToggleDkp("dkp");
+								Ugkp_UpdateMember();
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(40, this);
+							</OnLoad>
+							
+						</Scripts>
+					</Button>
+						<Button name="UgkpMemberFrameColumnHeader10" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_MEMBER_LGKP"  hidden="true">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberFrameColumnHeader9" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								UgkpSortOptions_ToggleDkp("ldkp");
+								Ugkp_UpdateMember();
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(40, this);
+							</OnLoad>
+							
+						</Scripts>
+					</Button>
+						<Button name="UgkpMemberFrameColumnHeader11" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_UPDATE1">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberFrameColumnHeader7" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							
+							<OnLoad>
+								Ugkp_setButtonWidth(70, this);
+							</OnLoad>
+							
+						</Scripts>
+					</Button>
+					
+					
+					
+
+					<Button name="UgkpMemberFrameListButton1" inherits="UgkpMemberListButtonTemplate" id="1">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberFrameColumnHeader12"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="10" y="-2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberFrameListButton2" inherits="UgkpMemberListButtonTemplate" id="2">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberFrameListButton1" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					
+					<Button name="UgkpMemberFrameListButton3" inherits="UgkpMemberListButtonTemplate" id="3">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberFrameListButton2" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberFrameListButton4" inherits="UgkpMemberListButtonTemplate" id="4">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberFrameListButton3" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberFrameListButton5" inherits="UgkpMemberListButtonTemplate" id="5">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberFrameListButton4" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberFrameListButton6" inherits="UgkpMemberListButtonTemplate" id="6">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberFrameListButton5" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberFrameListButton7" inherits="UgkpMemberListButtonTemplate" id="7">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberFrameListButton6" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberFrameListButton8" inherits="UgkpMemberListButtonTemplate" id="8">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberFrameListButton7" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberFrameListButton9" inherits="UgkpMemberListButtonTemplate" id="9">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberFrameListButton8" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberFrameListButton10" inherits="UgkpMemberListButtonTemplate" id="10">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberFrameListButton9" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					
+					
+	
+
+					<ScrollFrame name="UgkpMemberListScrollFrame" inherits="FauxScrollFrameTemplate">
+						<Size>
+							<AbsDimension x="296" y="330"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPRIGHT" relativeTo="UgkpMemberFrameColumnHeader11" relativePoint="TOPRIGHT">
+								<Offset>
+									<AbsDimension x="0" y="-20"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnVerticalScroll>
+								FauxScrollFrame_OnVerticalScroll(self,arg1,UGKP_BUTTON_HEIGHT, Ugkp_UpdateMember);
+							</OnVerticalScroll>
+						</Scripts>
+					</ScrollFrame>
+					
+	</Frames>
+	<Scripts>
+			<OnShow>
+				Ugkp_Member_Compute();
+			</OnShow>
+		</Scripts>			
+ </Frame>
+ 
+
+<Frame name="UgkpAddDkpFrame" parent="UIParent" hidden="true" toplevel="true" enableMouse="true" movable="true">
+		 <Size>
+			<AbsDimension x="400" y="150"/>
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER"/>
+		</Anchors>
+		<Backdrop name="$parentBackdrop" bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+				<EdgeSize>
+					<AbsValue val="16"/>
+				</EdgeSize>
+				<TileSize>
+					<AbsValue val="16"/>
+				</TileSize>
+				<BackgroundInsets>
+					<AbsInset left="3" right="5" top="3" bottom="5"/>
+				</BackgroundInsets>
+			</Backdrop>
+			<Layers>
+				<Layer level="ARTWORK">
+					<FontString name="$parentTitle" inherits="GameFontNormal" text="UGKP_TITLE">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpAddDkpFrame" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="10" y="-15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</FontString>
+					
+					<FontString name="$parentDkpPoint" inherits="GameFontNormal" text="UGKP_STRING_GKP_POINT">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpAddDkpFrame" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="10" y="-52"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</FontString>
+					<FontString name="$parentPointDes" inherits="GameFontNormal" text="UGKP_STRING_GKP_DES">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpAddDkpFrame" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="10" y="-82"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</FontString>
+					<FontString name="UgkpAddMember" inherits="GameFontNormal" hidden="true" />
+					
+				</Layer>
+			</Layers>
+		<Frames>
+			<Button name="$parentCloseButton" inherits="UIPanelCloseButton">
+						<Anchors>
+							<Anchor point="TOPRIGHT" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="2" y="2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+			<EditBox name="UgkpAddDkpFramePoint" letters="5" numeric="false" inherits="UgkpEditBoxTemplate">
+					<Size>
+					<AbsDimension x="250" y="26"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="20" y="-50" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Scripts>
+						<OnTabPressed>
+							getglobal("UgkpAddDkpFrameDes"):SetFocus();
+						</OnTabPressed>
+						<OnEscapePressed>
+							getglobal("UgkpAddDkpFrame"):Hide();
+						</OnEscapePressed>
+					</Scripts>
+			</EditBox>
+			
+			
+			<EditBox name="UgkpAddDkpFrameDes" letters="100" inherits="UgkpEditBoxTemplate">
+					<Size>
+					<AbsDimension x="250" y="26"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOP">
+						<Offset>
+							<AbsDimension x="20" y="-80" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+					<Scripts>
+						
+						<OnEscapePressed>
+							getglobal("UgkpAddDkpFrame"):Hide();
+						</OnEscapePressed>
+					</Scripts>
+			</EditBox>
+			
+			<Button name="UgkpAddDkpFrameDone" inherits="OptionsButtonTemplate" text="UGKP_BUTTON_GKP_ADD">
+				<Anchors>
+					<Anchor point="BOTTOM">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						Ugkp_Debug(getglobal("UgkpAddDkpFrameDes"):GetText());
+						UgkpAddDkp();
+						
+						getglobal("UgkpAddDkpFrame"):Hide();
+					</OnClick>
+				</Scripts>
+			</Button>
+			
+		</Frames>
+		<Scripts>
+			<OnShow>
+					getglobal("UgkpAddDkpFramePoint"):SetFocus();
+					getglobal("UgkpAddDkpFramePoint"):SetText("");
+					getglobal("UgkpAddDkpFrameDes"):SetText("");
+			</OnShow>
+						
+		</Scripts>
+</Frame>
+ <Button name="UgkpMemberEventListButtonTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="492" y="32"/>
+		</Size>
+		<Layers>
+			<Layer level="BORDER">
+				
+				<FontString name="$parentEventName" inherits="GameFontNormal" justifyH="LEFT" text="aaaa">
+					<Size>
+						<AbsDimension x="150" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentEventItem" inherits="GameFontHighlightSmall" justifyH="LEFT" text="ccccc">
+					<Size>
+						<AbsDimension x="130" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentEventName" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentEventDkp" inherits="GameFontHighlightSmall" justifyH="LEFT" text="10">
+					<Size>
+						<AbsDimension x="80" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentEventItem" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentEventMember" inherits="GameFontHighlightSmall" justifyH="LEFT" text="ccccc">
+					<Size>
+						<AbsDimension x="130" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentEventDkp" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+			</Layer>
+		</Layers>
+		<HighlightTexture file="Interface\FriendsFrame\UI-FriendsFrame-HighlightBar" alphaMode="ADD">
+			<Size>
+				<AbsDimension x="320" y="16"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOP">
+					<Offset>
+						<AbsDimension x="80" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</HighlightTexture>
+	</Button>
+	
+	<Frame name="UgkpMemberEventListFrame" parent="UIParent" hidden="true" toplevel="true" enableMouse="true" movable="true">
+		 <Size>
+			<AbsDimension x="512" y="410"/>
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER"/>
+		</Anchors>
+		<Backdrop name="$parentBackdrop" bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+				<EdgeSize>
+					<AbsValue val="16"/>
+				</EdgeSize>
+				<TileSize>
+					<AbsValue val="16"/>
+				</TileSize>
+				<BackgroundInsets>
+					<AbsInset left="3" right="5" top="3" bottom="5"/>
+				</BackgroundInsets>
+			</Backdrop>	
+			<Layers>
+			
+				<Layer level="ARTWORK">
+					<FontString name="$parentTitle" inherits="GameFontNormal" text="UGKP_TITLE_EVENT_MEMBERS">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberEventListFrame" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="10" y="-10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</FontString>
+					
+				</Layer>
+			</Layers>
+		<Frames>
+				<Button name="$parentCloseButton" inherits="UIPanelCloseButton">
+						<Anchors>
+							<Anchor point="TOPRIGHT" relativeTo="UgkpMemberEventListFrame">
+								<Offset>
+									<AbsDimension x="2" y="2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="UgkpMemberEventListColumnHeader2" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_EVENT_NAME">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberEventListFrame" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="15" y="-40"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(150,this);
+							</OnLoad>
+						</Scripts>
+					</Button>
+					
+					<Button name="UgkpMemberEventListColumnHeader3" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_EVENT_ITEM">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberEventListColumnHeader2" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(130,this);
+							</OnLoad>
+							
+						</Scripts>
+					</Button>
+					
+					<Button name="UgkpMemberEventListColumnHeader4" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_EVENT_GKP">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberEventListColumnHeader3" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(80,this);
+							</OnLoad>
+						</Scripts>
+					</Button>
+					<Button name="UgkpMemberEventListColumnHeader5" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_EVENT_MEMBER">
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="UgkpMemberEventListColumnHeader4" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								
+							</OnClick>
+							<OnLoad>
+								Ugkp_setButtonWidth(110,this);
+							</OnLoad>
+						</Scripts>
+					</Button>
+					<Button name="UgkpMemberEventFrameListButton1" inherits="UgkpMemberEventListButtonTemplate" id="1">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberEventListColumnHeader2"  relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="-2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberEventFrameListButton2" inherits="UgkpMemberEventListButtonTemplate" id="2">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberEventFrameListButton1" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberEventFrameListButton3" inherits="UgkpMemberEventListButtonTemplate" id="3">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberEventFrameListButton2" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberEventFrameListButton4" inherits="UgkpMemberEventListButtonTemplate" id="4">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberEventFrameListButton3" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					
+					<Button name="UgkpMemberEventFrameListButton5" inherits="UgkpMemberEventListButtonTemplate" id="5">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberEventFrameListButton4" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					
+					<Button name="UgkpMemberEventFrameListButton6" inherits="UgkpMemberEventListButtonTemplate" id="6">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberEventFrameListButton5" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberEventFrameListButton7" inherits="UgkpMemberEventListButtonTemplate" id="7">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberEventFrameListButton6" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberEventFrameListButton8" inherits="UgkpMemberEventListButtonTemplate" id="8">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberEventFrameListButton7" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberEventFrameListButton9" inherits="UgkpMemberEventListButtonTemplate" id="9">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberEventFrameListButton8" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					
+					<Button name="UgkpMemberEventFrameListButton10" inherits="UgkpMemberEventListButtonTemplate" id="10">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpMemberEventFrameListButton9" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<ScrollFrame name="UgkpMemberEventListScrollFrame" inherits="FauxScrollFrameTemplate">
+						<Size>
+							<AbsDimension x="296" y="330"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPRIGHT" relativeTo="UgkpMemberEventListColumnHeader5" relativePoint="TOPRIGHT">
+								<Offset>
+									<AbsDimension x="-7" y="-10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnVerticalScroll>
+								FauxScrollFrame_OnVerticalScroll(self,arg1,UGKP_BUTTON_HEIGHT, UgkpMemberEventListFrame_OnShow);
+							</OnVerticalScroll>
+						</Scripts>
+					</ScrollFrame>
+					
+					
+		</Frames>
+			<Scripts>		
+				<OnMouseUp>
+
+					UgkpMemberEventListFrame_OnMouseUp();
+				</OnMouseUp>
+				<OnMouseDown>
+					UgkpMemberEventListFrame_OnMouseDown(arg1);
+				</OnMouseDown>
+				<OnHide>
+					UgkpMemberEventListFrame_OnHide();
+				</OnHide>
+				<OnShow>
+					UgkpMemberEventListFrame_OnShow();
+				</OnShow>
+				
+					
+			</Scripts>
+	</Frame>
+	
+	<Frame name="UgkpChangeNumberFrame" parent="UIParent" hidden="true" toplevel="true" enableMouse="true" movable="true">
+	 <Size>
+		<AbsDimension x="400" y="120"/>
+	</Size>
+	<Anchors>
+		<Anchor point="CENTER"/>
+	</Anchors>
+	<Backdrop name="$parentBackdrop" bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<EdgeSize>
+				<AbsValue val="16"/>
+			</EdgeSize>
+			<TileSize>
+				<AbsValue val="16"/>
+			</TileSize>
+			<BackgroundInsets>
+				<AbsInset left="3" right="5" top="3" bottom="5"/>
+			</BackgroundInsets>
+		</Backdrop>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="$parentTitle" inherits="GameFontNormal" text="UGKP_SET_ITEM_PRICE">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="UgkpChangeItemDkpFrame" relativePoint="TOPLEFT">
+							<Offset>
+								<AbsDimension x="10" y="-20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentPointLabel" inherits="GameFontNormal" text="UGKP_MESSAGE_ITEM_PRICE">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="UgkpChangeItemDkpFrame" relativePoint="TOPLEFT">
+							<Offset>
+								<AbsDimension x="10" y="-56"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+			</Layer>
+		</Layers>
+	<Frames>
+		<Button name="$parentCloseButton" inherits="UIPanelCloseButton">
+					<Anchors>
+						<Anchor point="TOPRIGHT" relativeTo="UgkpChangeItemDkpFrame">
+							<Offset>
+								<AbsDimension x="2" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Button>
+		<EditBox name="$parentPoint" letters="5" numeric="true" inherits="UgkpEditBoxTemplate">
+				<Size>
+				<AbsDimension x="250" y="26"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOP">
+						<Offset>
+							<AbsDimension x="20" y="-40" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEscapePressed>
+						getglobal("UgkpChangeItemDkpFrame"):Hide();
+					</OnEscapePressed>
+				</Scripts>
+		</EditBox>
+	
+		
+		<Button name="$parentDone" inherits="OptionsButtonTemplate" text="UGKP_BUTTON_GKP_ADD">
+			<Anchors>
+				<Anchor point="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="20"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnClick>
+					--UgkpChangeItemDkp();
+					ugkp_changeNumber_ok();
+				</OnClick>
+			</Scripts>
+		</Button>
+		
+	</Frames>	
+	<Scripts>
+				<OnShow>
+					getglobal("UgkpChangeNumberFramePoint"):SetText("");
+					getglobal("UgkpChangeNumberFramePoint"):SetFocus();
+				</OnShow>
+	</Scripts>	
+	 </Frame>
+  </Ui>
