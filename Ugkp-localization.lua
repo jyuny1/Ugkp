@@ -1,3 +1,7 @@
+local lang, _ = GetLocale(), Battleguard.AntiSlack.LocalizedStrings -- Don't touch these two lines
+
+if lang ~= "zhCN" then return;
+
 --UGKP_TITLE = "嘟牛 GKP 系统";
 UGKP_TITLE = "嘟牛UGKP插件";
 
@@ -142,7 +146,7 @@ UGKP_MESSAGE_COIN_OUT="支出金额：";
 UGKP_SEND_COIN_DETAIL="发送收支详细";
 UGKP_SEND_COIN_ONE="发送收支概要";
 
-UgkpRaid_Class_Cn = {
+UgkpRaid_Class = {
 	["WARRIOR"] = "战士",
 	["PALADIN"] = "圣骑士",
 	["SHAMAN"] = "萨满祭司",
@@ -154,7 +158,7 @@ UgkpRaid_Class_Cn = {
 	["PRIEST"] = "牧师"
 };
 
-UgkpRaid_Race_Cn = {
+UgkpRaid_Race = {
 	["Dwarf"] = "矮人",
 	["Gnome"] = "侏儒",
 	["Human"] = "人类",
@@ -194,9 +198,9 @@ UGKP_MAP = {
           "强力风石",
           "翡翠四绿龙",
           "纳克萨玛斯"
-		  
+
   };
-  
+
 UGKP_MESSAGE_MAX_RAID="最多可以建5个raid,请先删除以前的raid";
 
 UgkpRaid_lang_LeftGroup = "([^%s]+)离开了团队";

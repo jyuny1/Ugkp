@@ -1,6 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 	<Script file="Ugkp-localization.lua"/>
+	<Script file="Ugkp-localization-zhTW.lua"/>
 	<Script file="Ugkp-main.lua"/>
 	<Script file="Ugkp-version.lua"/>
 	<Button name="UgkpFrameColumnHeaderTemplate" virtual="true">
@@ -40,7 +41,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		</Layers>
 		<Scripts>
 			<OnClick>
-				
+
 			</OnClick>
 		</Scripts>
 		<ButtonText inherits="GameFontHighlightSmall">
@@ -98,7 +99,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			</OnHide>
 		</Scripts>
 	</Frame>
-	
+
 	<Frame name="UgkpButtonFrame" parent="Minimap" enableMouse="true" hidden="false" frameStrata="LOW">
 		<Size>
 			<AbsDimension x="32" y="32"/>
@@ -122,7 +123,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Offset>
 					</Anchor>
 				</Anchors>
-				
+
 				<NormalTexture file="Interface\AddOns\ugkp\Images\gkpButton-Up"/>
 				<PushedTexture file="Interface\AddOns\ugkp\Images\gkpButton-Down"/>
 				<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
@@ -150,7 +151,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			</OnEvent>
 		</Scripts>
 	</Frame>
-	
+
 	<EditBox name="UgkpEditBoxTemplate" letters="200" autoFocus="false" historyLines="256" virtual="true" >
 		<Size>
 			<AbsDimension x="200" y="26"/>
@@ -197,9 +198,9 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Texture>
 			</Layer>
 		</Layers>
-		
+
 		<FontString inherits="ChatFontNormal" bytes="256"/>
-				
+
 		<Scripts>
 			<OnShow>
 				this:ClearFocus();
@@ -212,13 +213,13 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			</OnEscapePressed>
 		</Scripts>
 	</EditBox>
-	
-	
+
+
 	<Button name="UgkpEditButtonTemplate" virtual="true" >
 		<Size>
 			<AbsDimension x="200" y="32"/>
 		</Size>
-	
+
 		<Layers>
 			<Layer level="BACKGROUND">
 				<Texture name="$parentLeft" file="Interface\ChatFrame\UI-ChatInputBorder-Left">
@@ -272,11 +273,11 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</FontString>
 			</Layer>
 		</Layers>
-				
+
 	</Button>
-	
-	
-	
+
+
+
 	<Frame name="UGkpMainFrame" parent="UIParent" hidden="true" toplevel="false" enableMouse="true" movable="true">
 			<Size>
 				<AbsDimension x="768" y="512"/>
@@ -310,7 +311,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</FontString>
-					
+
 					<FontString name="$parentcopyright" inherits="GameFontNormal" text="UGKP_TITLE_COPYRIGHT">
 						<Anchors>
 							<Anchor point="TOPRIGHT" relativeTo="UGkpMainFrame" relativeFrom="TOPLEFT">
@@ -332,8 +333,8 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</Button>
-					
-					
+
+
 					<Button name="$parentTab1" inherits="CharacterFrameTabButtonTemplate" id="1" text="UGKP_TAB_RAID">
 						<Anchors>
 							<Anchor point="CENTER" relativePoint="BOTTOMLEFT" relativeTo="UGkpMainFrame">
@@ -346,7 +347,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							<OnClick>UGKPMain_SelectTab(1);</OnClick>
 						</Scripts>
 					</Button>
-			
+
 					<Button name="$parentTab2" inherits="CharacterFrameTabButtonTemplate" id="2" text="UGKP_TAB_SET">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="$parentTab1" relativePoint="RIGHT">
@@ -358,10 +359,10 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						<Scripts>
 							<OnClick>UGKPMain_SelectTab(2);</OnClick>
 						</Scripts>
-					</Button>	
-					
+					</Button>
+
 <!--					<Button name="$parentTab3" inherits="CharacterFrameTabButtonTemplate" id="3" text="UGKP_TAB_DEFAULT">
-					
+
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="$parentTab2" relativePoint="RIGHT">
 								<Offset>
@@ -373,7 +374,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							<OnClick>UGKPMain_SelectTab(3);</OnClick>
 						</Scripts>
 					</Button>	-->
-				
+
 			</Frames>
 			<Scripts>
 				<OnLoad>
@@ -382,7 +383,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				<OnShow>
 					UGKPMain_OnShow();
 				</OnShow>
-			
+
 				<OnMouseUp>
 					UGKPMain_OnMouseUp();
 				</OnMouseUp>
@@ -392,10 +393,10 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				<OnHide>
 					UGKPMain_OnHide();
 				</OnHide>
-				
+
 		</Scripts>
 	</Frame>
-        
+
 	<Button name="UGKP_HelpTemplate" virtual="true" hidden="false">
 		<Size>
 			<AbsDimension x="18" y="16"/>
@@ -421,7 +422,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			</OnEnter>
 			<OnLeave>
 				getglobal(this:GetName() .. "Text"):SetTextColor(1, 1, 1);
-				GameTooltip:Hide();						
+				GameTooltip:Hide();
 			</OnLeave>
 			<OnLoad>
 				this.text = "";
@@ -429,5 +430,5 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			</OnLoad>
 		</Scripts>
 	</Button>
-        
+
 </Ui>

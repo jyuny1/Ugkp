@@ -11,7 +11,7 @@ UgkpRaid_RarityTable = {
 };
 
 function Ugkp_UpdateItem()
-	
+
 	totalItems=0;
 	if(UGKP_PARTY_STUFF and getn(UGKP_PARTY_STUFF) > 0) then
 		totalItems = getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"]);
@@ -22,11 +22,11 @@ function Ugkp_UpdateItem()
 		FauxScrollFrame_Update(UgkpItemListScrollFrame,0 ,UGKP_NUM_BIDS_TO_DISPLAY,UGKP_BUTTON_HEIGHT);
 		return;
 	end
-	
+
 	offset=0;
 	local offset = FauxScrollFrame_GetOffset(UgkpItemListScrollFrame);
 	--Ugkp_Debug("offset",offset);
-	
+
 	for i=1, UGKP_NUM_BIDS_TO_DISPLAY  do
 		k = offset + i;
 		if ( k > totalItems ) then
@@ -69,7 +69,7 @@ function Ugkp_UpdateItem()
 	local c4=0;
 	local c5=0;
 	for i=1, totalItems  do
-				
+
 				c=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i]["c"];
 				if(c=="ff9d9d9d") then
 					c0=c0+1;
@@ -120,8 +120,8 @@ function UgkpDeleteItembyItemid(itemid)
 	if(itemid=="") then
 		return;
 	end
-	
-	
+
+
 	itemnumber=getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"]);
 	membernumber=getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"]);
 	eventnumber=getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"]);
@@ -152,7 +152,7 @@ function UgkpDeleteItembyItemid(itemid)
 			break;
 		end
 	end
-	
+
 end
 
 function UgkpChangeItemDkp(itemid)
@@ -172,13 +172,13 @@ function UgkpChangeItemDkp(itemid)
 	eventnumber=getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"]);
 	for i=1,itemnumber,1 do
 		if(itemid==UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i]["itemid"]) then
-			
+
 			if(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i]["cost"]==0 and newitemdkp==0) then
 				return;
 			end
-			
+
 			if(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i]["cost"]==0) then
-				
+
 				UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i]["cost"]=0+newitemdkp;
 				item=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i]
 				table.insert(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"],1,
@@ -196,10 +196,10 @@ function UgkpChangeItemDkp(itemid)
 				for j=1,membernumber,1 do
 				if(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i]["player"]==UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][j]["player"]) then
 					UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][j]["dkp"]=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][j]["dkp"] - newitemdkp
-					
+
 					break;
 					end
-				end		
+				end
 				Ugkp_UpdateItem();
 --				Ugkp_UpdateMember();
 --				Ugkp_UpdateEvent();
@@ -225,7 +225,7 @@ function UgkpChangeItemDkp(itemid)
 			break;
 		end
 	end
-	
+
 end
 
 function UgkpChangeItemMember()
@@ -245,30 +245,30 @@ function UgkpChangeItemMember()
 		item=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i];
 		if(item["itemid"]==itemid) then
 			for j=1,60,1 do
-			
+
 				if(getglobal("UgkpItemMemberList"..j.."Check"):GetChecked()) then
 					for k=1,totalraidmembers,1 do
 						if(item["player"]==UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][k]["player"]) then
 							UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][k]["dkp"]=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][k]["dkp"]+item["cost"];
-							
+
 						end
 						if(getglobal("UgkpItemMemberList"..j.."ButtonName"):GetText()==UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][k]["player"]) then
 							UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][k]["dkp"]=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][k]["dkp"]-item["cost"];
-							
+
 						end
 					end
-					
+
 					for k=1,totalevents,1 do
 						if(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"][k]["itemid"]==itemid) then
 							UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"][k]["players"][1]=getglobal("UgkpItemMemberList"..j.."ButtonName"):GetText();
 						end
 					end
-					
+
 					item["player"]=getglobal("UgkpItemMemberList"..j.."ButtonName"):GetText();
 					break;
 				end
 			end
-			
+
 			break;
 		end
 	end
@@ -315,7 +315,7 @@ function UgkpChangeItemMemberFrame_OnShow()
 	for i =1 ,totalItems,1 do
 		item=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i];
 		if(item["itemid"]==itemid) then
-			
+
 			for j=1,60,1 do
 				if(j>totalraidmembers) then
 					getglobal("UgkpItemMemberList"..j):Hide();
@@ -327,7 +327,7 @@ function UgkpChangeItemMemberFrame_OnShow()
 					else
 						getglobal("UgkpItemMemberList"..j.."Check"):SetChecked(false);
 					end
-					
+
 					getglobal("UgkpItemMemberList"..j.."ButtonName"):SetText(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][j]["player"]);
 				end
 			end
@@ -419,7 +419,7 @@ function UgkpColorToRGB(str)
 	str = strlower(strsub(str, 3));
 	local tbl = { };
 	tbl[1], tbl[2], tbl[3], tbl[4], tbl[5], tbl[6] = strsub(str, 1, 1), strsub(str, 2, 2), strsub(str, 3, 3), strsub(str, 4, 4), strsub(str, 5, 5), strsub(str, 6, 6);
-	
+
 	local highvals = { ["a"] = 10, ["b"] = 11, ["c"] = 12, ["d"] = 13, ["e"] = 14, ["f"] = 15 };
 	for k, v in tbl do
 		if ( highvals[v] ) then
@@ -442,51 +442,51 @@ function UgkpColorToRGB(str)
 end
 
 function UgkpGetColorString(str)
-	local playerClass = UnitClass("player");
+	local playerClass = select(2,UnitClass("player"));
 	local playerLevel = UnitLevel("player");
 	local classArmor = UgkpRaid_lang_classArmor;
-	
+
 	if(not str) then
 		return 0, 1, 0;
 	end
-	
+
 	-- Equip:
 	if ( string.find(str, "^"..UgkpRaid_lang_Equip..": ") ) then
 		return 0, 1, 0;
-		
+
 	-- Use:
 	elseif ( string.find(str, "^"..UgkpRaid_lang_Use..": ") ) then
 		return 0, 1, 0;
-		
+
 	-- Chance on hit:
 	elseif ( string.find(str, "^"..UgkpRaid_lang_Chanceonhit..":") ) then
 		return 0, 1, 0;
-		
+
 	-- Sets
 	elseif ( string.find(str, "^.+ %(%d+/%d+%)$") ) then
 		return 1, 0.82, 0, 1;
-	
+
 	-- Durability 0/X
 	elseif ( string.find(str, "^"..UgkpRaid_lang_Durability.." 0 / %d+$") ) then
 		return 1, 0.15, 0.15;
-		
+
 	-- Wrong class
 	elseif ( string.find(str, "^"..UgkpRaid_lang_Classes..": ") and not string.find(str, "^"..UgkpRaid_lang_Classes..": .*" .. playerClass) ) then
 		return 1, 0.15, 0.15;
-		
+
 	-- Made by
 	elseif ( string.find(str, "^<"..UgkpRaid_lang_Madeby.." .+>$") ) then
 		return 0, 1, 0;
-	end	
-	
-	
-	
+	end
+
+
+
 	-- Armor type
 	--Ugkp_Debug(classArmor[playerClass][str],playerLevel);
 	if ( classArmor[playerClass][str] and classArmor[playerClass][str] > playerLevel ) then
 		return 1, 0.15, 0.15;
 	end
-	
+
 	-- Low level
 	--local iStart, iEnd, level = string.find(str, "^Requires Level (%d+)$");
 	local iStart, iEnd, level = string.find(str, "^"..UgkpRaid_lang_RequiresLevel.." (%d+)$");
@@ -526,7 +526,7 @@ function UgkpChangeClass()
 end
 
 function Ugkp_Class_Init()
-  for k,instance in pairs(UgkpRaid_Class_Cn) do
+  for k,instance in pairs(UgkpRaid_Class) do
     local info = { };
     info.text = instance;
     info.value = instance;
@@ -558,12 +558,12 @@ end
 
 function Ugkp_Member_Init()
   if(UGKP_PARTY_STUFF and getn(UGKP_PARTY_STUFF) > 0) then
-  
+
 	raidMemberCount = getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"]);
 	 for i=1,raidMemberCount,1 do
-	 	
+
 	    if(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][i]["class"]==selectClass) then
-	    	
+
 		    local info = { };
 		    info.text = UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][i]["player"];
 		    info.value = UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][i]["player"];
@@ -573,8 +573,8 @@ function Ugkp_Member_Init()
   	end
   end
 end
-  
-  
+
+
 function UgkpChangeMember()
   UIDropDownMenu_SetSelectedValue(Ugkp_AddItemMemberDropDown,this.value);
   selectMember=this.value;
@@ -588,7 +588,7 @@ end;
 
 
 function Ugkp_SetItemRef(link, text, button)
-	if ( link and strsub(link, 1, 6) == "player" ) then	
+	if ( link and strsub(link, 1, 6) == "player" ) then
 		local name = strsub(link, 8);
 		if ( name and (strlen(name) > 0) ) then
 			name = gsub(name, "([^%s]*)%s+([^%s]*)", "%2");
@@ -600,7 +600,7 @@ function Ugkp_SetItemRef(link, text, button)
 				else
 					SendWho("n-"..name);
 				end
-				
+
 			elseif ( button == "RightButton" ) then
 				FriendsFrame_ShowDropdown(name, 1, lineid);
 			else
@@ -609,7 +609,7 @@ function Ugkp_SetItemRef(link, text, button)
 		end
 		return;
 	end
-	
+
 	if ( IsShiftKeyDown() ) then
 		if ( ChatFrameEditBox:IsVisible() ) then
 			ChatFrameEditBox:Insert(text);
@@ -623,9 +623,9 @@ function Ugkp_SetItemRef(link, text, button)
 			ItemRefTooltip:SetOwner(UIParent, "ANCHOR_PRESERVE");
 		end
 		ItemRefTooltip:SetHyperlink(text);
-		
+
 	end
-	
+
 end
 
 function Ugkp_ManAddItem()
@@ -633,30 +633,30 @@ function Ugkp_ManAddItem()
 			sLink=getglobal("UgkpAddItemNameText"):GetText();
 			--Ugkp_Debug("sLink","aa"..sLink.."bb"..sPlayer.."cc");
 			if(sLink=="" or sLink==nil) then
-				UgkpRaidMessageBox("没有要增加的物品,请在聊天窗口shift+物品链接");
+				UgkpRaidMessageBox(UGKP_NO_ADD_ITEM);
 				--				UgkpRaidMessageBox("stghsgf");
 				return;
 			end
-			
+
 			if(sPlayer=="" or sPlayer==nil) then
-				UgkpRaidMessageBox("没有选择物品的拾取人");
+				UgkpRaidMessageBox(UGKP_NO_ITEM_LOOTER);
 				return;
 			end
-			
-			
+
+
 			if ( sLink and sPlayer ) then
 				local sColor, sItem, sName, sTooltip = Ugkp_GetItemInfo(sLink);
 				--Ugkp_Debug(sColor, sItem, sName);
 				if ( sColor and sItem and sName  ) then
-	
+
 				local nameGIF, linkGIF, qualityGIF, iLevelGIF, minLevelGIF, classGIF, subclassGIF, maxStackGIF, invtypeGIV, iconGIF = GetItemInfo("item:"..sItem);
-						_, _, iconGIF = string.find(iconGIF, "^.*\\(.*)$"); 	
+						_, _, iconGIF = string.find(iconGIF, "^.*\\(.*)$");
 				-- Insert into table
 				local tt = date("*t");
 				table.insert(UGKP_PARTY_STUFF[1]["Items"],1,
 					{
 						["tooltip"] = sTooltip,
-						["player"] = sPlayer,				
+						["player"] = sPlayer,
 						["c"] = sColor,
 						["itemid"] =  UgkpGenId(),
 						["name"] = sName,
@@ -670,10 +670,10 @@ function Ugkp_ManAddItem()
 					}
 				);
 				UGKP_Tooltip:Hide();
-					
-					
+
+
 				end
-				
+
 				Ugkp_UpdateItem();
 			end
 			UgkpAddItemFrame:Hide()
@@ -710,15 +710,15 @@ function Ugkp_DeleteSelectItemOK()
 		end
 	end
 	if(selectitem==0) then
-		UgkpRaidMessageBox("没有选择要删除的物品");
+		UgkpRaidMessageBox(UGKP_NO_ITEM_DELETE);
 	else
-		deletemessage="确认删除你选择的"..selectitem.."件物品吗?";
+		deletemessage=UGKP_ITEM_DELETE_CONFIRM1..selectitem..UGKP_ITEM_DELETE_CONFIRM2;
 		getglobal("UGKP_AcceptDeleteFrameHeaderText"):SetText(UGKP_BUTTON_ITEM_DELETE);
 		getglobal("UGKP_AcceptDeleteFrameInfo"):SetText(deletemessage);
 		getglobal("UGKP_AcceptDeleteFrametype"):SetText("7");
 		UGKP_AcceptDeleteFrame:Show();
 	end
-	
+
  	--UgkpDeleteItembyItemid(itemid)
 
 end
@@ -730,13 +730,13 @@ function Ugkp_DeleteSelectItem()
 	end
 
 	for i=totalItems,1,-1 do
-		
+
 		if(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i]["selected"]==1) then
-		
+
 		UgkpDeleteItembyItemid(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i]["itemid"]);
 		end
 	end
- 	--UgkpItem_CompInfo = {DU_NIU}	
+ 	--UgkpItem_CompInfo = {DU_NIU}
 end
 
 
@@ -765,5 +765,5 @@ end
 
 function Ugkp_ItemColorDropDown_OnClick()
 	UIDropDownMenu_SetSelectedValue(Ugkp_ItemColorDropDown, this.value);
-	
+
 end

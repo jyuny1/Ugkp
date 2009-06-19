@@ -1,4 +1,4 @@
-## Interface: 30000
+## Interface: 30100
 ## Title: Ugkp  V3.0.0
 ## Notes:  V3.oo.0a [ duniu.com ]对事件中的GKP进行记录
 ## OptionalDeps:

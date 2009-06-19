@@ -1,1 +1,1 @@
-DkpVersion="3.0.0a";
+DkpVersion="3.10-dobang";

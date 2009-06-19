@@ -169,8 +169,8 @@ function UgkpStartRaid()
 				table.insert(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"],1,
 					{
 						["player"] = sPlayer,
-						["race"] = UgkpRaid_Race_Cn[race],
-						["class"] = UgkpRaid_Class_Cn[fileName],
+						["race"] = UgkpRaid_Race[race],
+						["class"] = UgkpRaid_Class[fileName],
 						["level"] = level,
 						["join"] = t.hour..":"..t.min,
 						["totaltime"] = 0,
@@ -188,8 +188,8 @@ function UgkpStartRaid()
 				table.insert(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"],1,
 					{
 						["player"] = sPlayer,
-						["race"] = UgkpRaid_Race_Cn[race],
-						["class"] = UgkpRaid_Class_Cn[fileName],
+						["race"] = UgkpRaid_Race[race],
+						["class"] = UgkpRaid_Class[fileName],
 						["level"] = level,
 						["join"] = t.hour..":"..t.min,
 						["totaltime"] = 0,

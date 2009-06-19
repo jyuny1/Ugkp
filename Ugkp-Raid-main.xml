@@ -8,7 +8,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		<Size>
 			<AbsDimension x="200" y="32"/>
 		</Size>
-		
+
 	<Frames>
 	<CheckButton name="$parentCheck" inherits="OptionsCheckButtonTemplate"  virtual="true">
 	<Size>
@@ -47,13 +47,13 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		</Anchors>
 		<Layers>
 			<Layer level="BACKGROUND">
-				
+
 				<FontString name="$parentId" inherits="GameFontNormal" justifyH="LEFT" hidden="true">
 					<Size>
 						<AbsDimension x="0" y="0"/>
 					</Size>
 				</FontString>
-				
+
 				<FontString name="$parentName" inherits="GameFontNormal" justifyH="LEFT" text="">
 					<Size>
 						<AbsDimension x="110" y="16"/>
@@ -85,11 +85,11 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		<OnClick>
 			UgkpChangeRaid()
 		</OnClick>
-		
+
 		</Scripts>
 	</Button>
 	</Frames>
-	
+
 </Button>
 
 
@@ -124,7 +124,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 
 <Frames>
 
-					
+
 			<Frame name="UgkpRaidListBorderFrame" inherits="OptionsBoxTemplate">
 			<Size>
 				<AbsDimension x="150" y="200"/>
@@ -149,7 +149,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								</Offset>
 							</Anchor>
 						</Anchors>
-                                                
+
 					</FontString>
 				</Layer>
 			</Layers>
@@ -162,9 +162,9 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								</Offset>
 							</Anchor>
 						</Anchors>
-						
+
 				</Button>
-				
+
 				<Button name="UgkpRaidFrameListButton2" inherits="UgkpRaidListButtonTemplate" id="2">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpRaidFrameListButton1" relativePoint="BOTTOMLEFT">
@@ -173,9 +173,9 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								</Offset>
 							</Anchor>
 						</Anchors>
-						
+
 				</Button>
-				
+
 				<Button name="UgkpRaidFrameListButton3" inherits="UgkpRaidListButtonTemplate" id="3">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpRaidFrameListButton2" relativePoint="BOTTOMLEFT">
@@ -184,9 +184,9 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								</Offset>
 							</Anchor>
 						</Anchors>
-						
+
 				</Button>
-				
+
 				<Button name="UgkpRaidFrameListButton4" inherits="UgkpRaidListButtonTemplate" id="4">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpRaidFrameListButton3" relativePoint="BOTTOMLEFT">
@@ -195,9 +195,9 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								</Offset>
 							</Anchor>
 						</Anchors>
-						
+
 				</Button>
-				
+
 				<Button name="UgkpRaidFrameListButton5" inherits="UgkpRaidListButtonTemplate" id="5">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpRaidFrameListButton4" relativePoint="BOTTOMLEFT">
@@ -206,7 +206,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								</Offset>
 							</Anchor>
 						</Anchors>
-						
+
 				</Button>
 				<Button name="Ugkp_AddRaid_Button" inherits="UIPanelButtonTemplate" text="UGKP_BUTTON_RAID_ADD">
 				<Size>
@@ -225,7 +225,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			
+
 			<Button name="Ugkp_RaidDelete_Button" inherits="UIPanelButtonTemplate" text="UGKP_BUTTON_RAID_DELETE">
 				<Size>
 					<AbsDimension x="60" y="21"/>
@@ -241,7 +241,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					<OnClick>
 						getglobal("UGKP_AcceptDeleteFrametype"):SetText("4");
 						UGKP_AcceptDeleteFrame:Show();
-						
+
 					</OnClick>
 				</Scripts>
 			</Button>
@@ -251,10 +251,10 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					this:SetBackdropColor(1,1,1,0)
 				</OnLoad>
 			</Scripts>
-			
-			
+
+
 		</Frame>
-		
+
 		<Frame name="UgkpRaidBorderFrame" inherits="OptionsBoxTemplate">
 			<Size>
 				<AbsDimension x="598" y="400"/>
@@ -279,12 +279,12 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								</Offset>
 							</Anchor>
 						</Anchors>
-                                                
+
 					</FontString>
 				</Layer>
 			</Layers>
 			<Frames>
-			
+
 					<Button name="$parentTab1" inherits="CharacterFrameTabButtonTemplate" id="1" text="UGKP_TAB_RAID">
 						<Anchors>
 							<Anchor point="CENTER" relativePoint="BOTTOMLEFT" relativeTo="UgkpRaidBorderFrame">
@@ -297,7 +297,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							<OnClick>UgkpRaidMain_SelectTab(1);</OnClick>
 						</Scripts>
 					</Button>
-			
+
 					<Button name="$parentTab2" inherits="CharacterFrameTabButtonTemplate" id="2" text="UGKP_TAB_MEMBER">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="$parentTab1" relativePoint="RIGHT">
@@ -309,8 +309,8 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						<Scripts>
 							<OnClick>UgkpRaidMain_SelectTab(2);</OnClick>
 						</Scripts>
-					</Button>	
-					
+					</Button>
+
 					<Button name="$parentTab3" inherits="CharacterFrameTabButtonTemplate" id="3" text="UGKP_TAB_ITEM">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="$parentTab2" relativePoint="RIGHT">
@@ -323,7 +323,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							<OnClick>UgkpRaidMain_SelectTab(3);</OnClick>
 						</Scripts>
 					</Button>
-					
+
 					<Button name="$parentTab4" inherits="CharacterFrameTabButtonTemplate" id="4" text="UGKP_TAB_PACKET">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="$parentTab3" relativePoint="RIGHT">
@@ -336,7 +336,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							<OnClick>UgkpRaidMain_SelectTab(4);</OnClick>
 						</Scripts>
 					</Button>
-					
+
 					<Button name="$parentTab5" inherits="CharacterFrameTabButtonTemplate" id="5" text="UGKP_TAB_REPORT">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="$parentTab4" relativePoint="RIGHT">
@@ -349,7 +349,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							<OnClick>UgkpRaidMain_SelectTab(5);</OnClick>
 						</Scripts>
 					</Button>
-					
+
 					<Button name="$parentTab6" inherits="CharacterFrameTabButtonTemplate" id="6" text="UGKP_TAB_CHANNEL">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="$parentTab5" relativePoint="RIGHT">
@@ -381,8 +381,8 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</OnLoad>
 			</Scripts>
 		</Frame>
-		
-		
+
+
 		<Frame name="UgkpLogoBorderFrame" inherits="OptionsBoxTemplate">
 			<Size>
 				<AbsDimension x="150" y="80"/>
@@ -396,6 +396,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			</Anchors>
 			<Layers>
 				<Layer level="BACKGROUND">
+				  <!--
 					<Texture file="Interface\AddOns\Ugkp\Images\duniuLogo.blp">
 						<Size>
 							<AbsDimension x="128" y="64"/>
@@ -407,10 +408,12 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								</Offset>
 							</Anchor>
 						</Anchors>
-					</Texture>
+					      </Texture>
+					      -->
 				</Layer>
-				
+
 				<Layer level="NaWou_DiJal">
+				  <!--
 					<Texture file="Interface\AddOns\Ugkp\Images\duniuLogo_D.blp">
 						<Size>
 							<AbsDimension x="64" y="64"/>
@@ -422,18 +425,19 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								</Offset>
 							</Anchor>
 						</Anchors>
-					</Texture>
+					      </Texture>
+					      -->
 				</Layer>
-				
+
 			</Layers>
 
-			
+
 			<Scripts>
 				<OnLoad>
 					this:SetBackdropColor(1,1,1,0)
 				</OnLoad>
 			</Scripts>
-		</Frame>				
+		</Frame>
 </Frames>
 <Scripts>
 	<OnLoad>
@@ -444,12 +448,12 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 	</OnShow>
 	<OnEvent>
 	  	Ugkp_RaidMain_OnEvent(event);
-	</OnEvent> 
+	</OnEvent>
 	<OnHide>
 		PlaySound("UChatScrollButton");
 	</OnHide>
 </Scripts>
  </Frame>
- 
- 
+
+
  </Ui>
