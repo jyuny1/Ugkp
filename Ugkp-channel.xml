@@ -7,7 +7,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		<Size>
 			<AbsDimension x="200" y="32"/>
 		</Size>
-		
+
 	<Frames>
 	<CheckButton name="$parentCheck" inherits="OptionsCheckButtonTemplate"  virtual="true">
 	<Size>
@@ -46,13 +46,13 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		</Anchors>
 		<Layers>
 			<Layer level="BACKGROUND">
-				
+
 				<FontString name="$parentId" inherits="GameFontNormal" justifyH="LEFT" hidden="true">
 					<Size>
 						<AbsDimension x="0" y="0"/>
 					</Size>
 				</FontString>
-				
+
 				<FontString name="$parentName" inherits="GameFontNormal" justifyH="LEFT" text="">
 					<Size>
 						<AbsDimension x="110" y="16"/>
@@ -79,10 +79,10 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Anchor>
 			</Anchors>
 		</HighlightTexture>
-		
+
 	</Button>
 	</Frames>
-	
+
 </Button>
 
  <Frame name="Ugkp_ChannelFrame" parent="UgkpRaidBorderFrame" inherits="UgkpRaidTabFrame">
@@ -100,7 +100,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</Anchor>
 				</Anchors>
 			</FontString>
-			
+
 			<FontString name="UgkpSendAllDkpString" inherits="GameFontNormal" justifyH="LEFT" text="UGKP_HEAD_CHANNEL_ALLGKP">
 				<Size>
 					<AbsDimension x="300" y="14"/>
@@ -116,7 +116,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		</Layer>
 	</Layers>
 	<Frames>
-	
+
 		<Frame name="UgkpClassDkpBorderFrame" inherits="OptionsBoxTemplate">
 			<Size>
 				<AbsDimension x="550" y="200"/>
@@ -134,7 +134,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</OnLoad>
 			</Scripts>
 		</Frame>
-		
+
 		<Frame name="UgkpClassDkpBorderFrame1" inherits="OptionsBoxTemplate">
 			<Size>
 				<AbsDimension x="550" y="140"/>
@@ -152,7 +152,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</OnLoad>
 			</Scripts>
 		</Frame>
-		
+
 		<Button name="UgkpSendClassDkp_Button" inherits="UIPanelButtonTemplate" text="UGKP_BUTTON_GKP_SEND">
 				<Size>
 					<AbsDimension x="80" y="21"/>
@@ -170,7 +170,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			
+
 			<Button name="UgkpSendAllDkp_Button" inherits="UIPanelButtonTemplate" text="UGKP_BUTTON_GKP_SEND">
 				<Size>
 					<AbsDimension x="80" y="21"/>
@@ -197,7 +197,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 				</Button>
-				
+
 				<Button name="UgkpClassListButton2" inherits="UgkpRaidClassListButtonTemplate" id="2">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="UgkpClassListButton1" relativePoint="RIGHT">
@@ -207,7 +207,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 				</Button>
-				
+
 				<Button name="UgkpClassListButton3" inherits="UgkpRaidClassListButtonTemplate" id="3">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="UgkpClassListButton2" relativePoint="RIGHT">
@@ -217,7 +217,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 				</Button>
-				
+
 				<Button name="UgkpClassListButton4" inherits="UgkpRaidClassListButtonTemplate" id="4">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpClassListButton1" relativePoint="BOTTOMLEFT">
@@ -227,7 +227,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 				</Button>
-				
+
 				<Button name="UgkpClassListButton5" inherits="UgkpRaidClassListButtonTemplate" id="5">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="UgkpClassListButton4" relativePoint="RIGHT">
@@ -237,7 +237,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 				</Button>
-				
+
 				<Button name="UgkpClassListButton6" inherits="UgkpRaidClassListButtonTemplate" id="6">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="UgkpClassListButton5" relativePoint="RIGHT">
@@ -247,8 +247,8 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 				</Button>
-				
-				
+
+
 				<Button name="UgkpClassListButton7" inherits="UgkpRaidClassListButtonTemplate" id="7">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpClassListButton4" relativePoint="BOTTOMLEFT">
@@ -258,7 +258,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 				</Button>
-				
+
 				<Button name="UgkpClassListButton8" inherits="UgkpRaidClassListButtonTemplate" id="8">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="UgkpClassListButton7" relativePoint="RIGHT">
@@ -268,7 +268,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 				</Button>
-				
+
 				<Button name="UgkpClassListButton9" inherits="UgkpRaidClassListButtonTemplate" id="9">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="UgkpClassListButton8" relativePoint="RIGHT">
@@ -278,14 +278,21 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 				</Button>
-				
-				
+				<Button name="UgkpClassListButton10" inherits="UgkpRaidClassListButtonTemplate" id="10">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="UgkpClassListButton9" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="0" y="-10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+				</Button>
 	</Frames>
 	<Scripts>
 		<OnLoad>
 			Ugkp_ChannelFrame_OnLoad();
 		</OnLoad>
-		
+
 		<OnShow>
 			if(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]) then
 				getglobal("UgkpRaidHeaderString"):SetText(UGKP_MESSAGE_CHANNEL.."|cff1eff00"..UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Notes"]);
@@ -295,6 +302,6 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		</OnShow>
 	</Scripts>
  </Frame>
- 
- 
+
+
   </Ui>

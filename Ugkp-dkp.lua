@@ -11,7 +11,7 @@ function Ugkp_UpdateEvent()
 		return;
 	end
 	FauxScrollFrame_Update(UgkpListScrollFrame,totalEvents ,UGKP_NUM_BIDS_TO_DISPLAY,UGKP_BUTTON_HEIGHT);
-	
+
 	local offset = FauxScrollFrame_GetOffset(UgkpListScrollFrame);
 	for i=1, UGKP_NUM_BIDS_TO_DISPLAY  do
 		k = offset + i;
@@ -24,7 +24,7 @@ function Ugkp_UpdateEvent()
 			if ( getglobal("UgkpEventFrameListButton" .. i) ) then
 				getglobal("UgkpEventFrameListButton" .. i .. "eventid"):SetText(v["eventid"]);
 				getglobal("UgkpEventFrameListButton" .. i .. "EventName"):SetText(v["reason"]);
-				
+
 				if(v["itemname"]~="") then
 					totalItems=getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"]);
 					for j=1,totalItems,1 do
@@ -49,10 +49,10 @@ function Ugkp_UpdateEvent()
 				else
 					getglobal("UgkpEventFrameListButton" .. i .. "EventMember"):SetText(v["players"][1]);
 					getglobal("UgkpEventFrameListButton" .. i .. "MemberList"):Hide();
-					
+
 				end
-				
-				
+
+
 			end
 		end
 	end
@@ -67,10 +67,10 @@ function Ugkp_UpdateEvent()
 		end
 	end
 	totalMember=getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"]);
-	
+
 	l=0;
 	for i=1,totalMember do
-	
+
 		if( (not UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][i]["ischeck"]) or UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][i]["ischeck"]=="1") then
 			l=l+1;
 		end
@@ -82,17 +82,17 @@ function Ugkp_UpdateEvent()
 		--getglobal("UgkpRaidHeaderString"):SetText(UGKP_MESSAGE_EVENT..UGKP_MESSAGE_COIN_IN.."|cff1eff00"..incoin.."|r     "..UGKP_MESSAGE_COIN_OUT.."|cffff0000"..outcoin.."|r "..UGKP_MESSAGE_MEMBER_JOIN..": "..l.."    "..UGKP_HEAD_EVENT_TADV..": "..math.floor((incoin-outcoin)/l*100)/100);
 		--ugkp_say_message=ugkp_say_message..UGKP_HEAD_EVENT_TADV ..math.floor((incoin-outcoin)/totalMember*100)/100 ..UGKP_MESSAGE_GOLD;
 	end
-	
-	
+
+
 end
 
 function UgkpdeleteEvent()
 	eventid=getglobal("ugkpcurrenteventid"):GetText();
-	
+
 	if(eventid=="") then
 		return;
 	end
-	
+
 	totalEvents = getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"]);
 	for i =totalEvents ,1,-1 do
 		e=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"][i];
@@ -122,7 +122,7 @@ function UgkpdeleteEvent()
 			table.remove(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"],i);
 --			Ugkp_UpdateMember();
 			Ugkp_UpdateEvent();
-			
+
 			break;
 		end
 	end
@@ -141,7 +141,7 @@ function UgkpchangeEventDkp()
 		UgkpRaidMessageBox(UGKP_MESSAGE_GKP_ISNULL) ;
 		return;
 	end
-	
+
 	totalEvents = getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"]);
 	for i =totalEvents ,1,-1 do
 		e=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"][i];
@@ -172,14 +172,14 @@ function UgkpchangeEventDkp()
 			else
 				UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"][i]["dkp"]=newdkp;
 			end
-			
+
 --			Ugkp_UpdateMember();
 			Ugkp_UpdateEvent();
-			
+
 			break;
 		end
 	end
-	
+
 end
 
 function UgkpchageEventMember()
@@ -199,29 +199,29 @@ function UgkpchageEventMember()
 				for k=totalraidmembers,1,-1 do
 					if(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"][i]["players"][j]==UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][k]["player"]) then
 						UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][k]["dkp"]=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][k]["dkp"] - dkp;
-						
+
 						break;
 					end
 				end
 				table.remove(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"][i]["players"],j);
 			end
-			
+
 			for j=1,60,1 do
 				if(getglobal("UgkpMemberList"..j.."Check"):GetChecked()) then
 					membername=getglobal("UgkpMemberList"..j.."ButtonName"):GetText();
 					for k=totalraidmembers,1,-1 do
 						if(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][k]["player"]==membername) then
 							UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][k]["dkp"]=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][k]["dkp"] + dkp;
-							
+
 						end
 					end
 					table.insert(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"][i]["players"],1,membername);
 				end
-				
-			end
-		
 
-			
+			end
+
+
+
 			break;
 		end
 	end
@@ -264,7 +264,7 @@ function UgkpChangeEventMemberFrame_OnShow()
 	for i =1 ,totalEvents,1 do
 		e=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"][i];
 		if(e.eventid==eventid) then
-			
+
 			for j=1,60,1 do
 				if(j>totalraidmembers) then
 					getglobal("UgkpMemberList"..j):Hide();
@@ -276,18 +276,18 @@ function UgkpChangeEventMemberFrame_OnShow()
 				end
 			end
 			eventplayerNumber=getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"][i]["players"]);
-			
+
 			for j=1,totalraidmembers,1 do
 				if(j<=60) then
 					for k=1,eventplayerNumber,1 do
-						
+
 						if(getglobal("UgkpMemberList"..j.."ButtonName"):GetText()==UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Events"][i]["players"][k]) then
 							getglobal("UgkpMemberList"..j.."Check"):SetChecked(true);
 						end
 					end
 				end
 			end
-			
+
 			break;
 		end
 	end
@@ -314,7 +314,7 @@ function ugkpSendDetail()
 	totalMember = getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"]);
 	l=0;
 	for i=1,totalMember do
-	
+
 		if( (not UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][i]["ischeck"]) or UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][i]["ischeck"]=="1") then
 			l=l+1;
 		end
@@ -325,8 +325,8 @@ function ugkpSendDetail()
 	else
 		SendChatMessage(l..UGKP_TAB_MEMBER..UGKP_MESSAGE_MEMBER_JOIN..","..UGKP_HEAD_EVENT_TADV ..math.floor((incoin-outcoin)/l*100)/100 ..UGKP_MESSAGE_GOLD, UgkpOptions.ChannelLevel,this.language, nil);
 	end
-	
-	SendChatMessage(UGKP_MESSAGE_DUNIU,UgkpOptions.ChannelLevel, this.language, nil);
+
+	--SendChatMessage(UGKP_MESSAGE_DUNIU,UgkpOptions.ChannelLevel, this.language, nil);
 end
 
 function ugkpSendTotal()
@@ -343,22 +343,22 @@ function ugkpSendTotal()
 	totalMember = getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"]);
 	l=0
 	for i=1,totalMember do
-	
+
 		if( (not UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][i]["ischeck"]) or UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Members"][i]["ischeck"]=="1") then
 			l=l+1;
 		end
 	end
 	ugkp_say_message =""..UGKP_HEAD_EVENT_TIN..incoin..UGKP_MESSAGE_GOLD..","..UGKP_HEAD_EVENT_TOUT ..outcoin..UGKP_MESSAGE_GOLD..","..l..UGKP_TAB_MEMBER..UGKP_MESSAGE_MEMBER_JOIN..",";
-	
+
 	if(UgkpOptions.CoinLevel==1) then
 		ugkp_say_message=ugkp_say_message..UGKP_HEAD_EVENT_TADV ..math.floor((incoin-outcoin)/l)..UGKP_MESSAGE_GOLD;
 	else
 		ugkp_say_message=ugkp_say_message..UGKP_HEAD_EVENT_TADV ..math.floor((incoin-outcoin)/l*100)/100 ..UGKP_MESSAGE_GOLD;
 	end
 	SendChatMessage(ugkp_say_message, UgkpOptions.ChannelLevel,this.language, nil);
-	
+
 	totalitem=getn(UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"]);
-	
+
 	for i=1,totalitem do
 		e=UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["Items"][i]
 		--SendChatMessage("|c"..e["c"].."|Hitem:"..e["id"].."|h["..e["name"].."]|h|r", UgkpOptions.ChannelLevel,this.language, nil);

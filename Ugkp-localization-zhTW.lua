@@ -1,9 +1,10 @@
 local lang = GetLocale() -- Don't touch these two lines
 if lang ~= "zhTW" then return end;
 
-UGKP_TITLE = "渡邊G團分贓插件(由 Ugkp 修改)";
+UGKP_TITLE = "渡邊G團分贓系統(由 Ugkp 修改)";
 SLASH_COMMAND_STRING="/dobang"
 
+UGKP_MINIMAP_TOOLTIP = "開啟/關閉渡邊G團分贓系統"
 UGKP_TAB_RAID = "主頁";
 UGKP_TAB_SIGNUP = "報名";
 UGKP_TAB_SET = "設置";
@@ -203,16 +204,25 @@ UGKP_MAP = {
   "奧杜亞",
 };
 
+CT_ITEMREG = "(|c%x+|Hitem:%d+:%d+:%d+:%d+:%d+:%d+:(%-?%d+):(%-?%d+):%d+|h%[.-%]|h|r)%";
+CT_ITEMREG_MULTI = "(|c%x+|Hitem:%d+:%d+:%d+:%d+:%d+:%d+:(%-?%d+):(%-?%d+):%d+|h%[.-%]|h|r)x(%d+)%";
+
 UGKP_MESSAGE_MAX_RAID="最多可以建5個raid,請先刪除以前的raid";
 
 UgkpRaid_lang_LeftGroup = "([^%s]+)離開了團隊";
 UgkpRaid_lang_JoinedGroup = "([^%s]+)加入了團隊";
-UgkpRaid_lang_ReceivesLoot1 = "([^%s]+)獲得了物品：(.+)。";
-UgkpRaid_lang_ReceivesLoot2 = "你獲得了物品：(.+)";
+UgkpRaid_lang_ReceivesLoot1 = "([^%s]+)拾取了物品:"..CT_ITEMREG.."。";
+UgkpRaid_lang_ReceivesLoot2 = "你拾取了物品:"..CT_ITEMREG.."。";
+UgkpRaid_lang_ReceivesLoot3 = "([^%s]+)獲得戰利品:"..CT_ITEMREG_MULTI.."。";
+UgkpRaid_lang_ReceivesLoot4 = "你獲得戰利品:"..CT_ITEMREG_MULTI.."。";
 
-UgkpRaid_lang_ReceivesLoot3 = "([^%s]+)x(.+)。";
-UgkpRaid_lang_ReceivesLoot4 = "([^%s]+)得到了物品：(.+)x";
+--[[
+UgkpRaid_lang_ReceivesLoot1 = "([^%s]+)獲得戰利品:(.+)。";
+UgkpRaid_lang_ReceivesLoot2 = "你獲得戰利品:(.+)。";
 
+UgkpRaid_lang_ReceivesLoot3 = "([^%s]+)x([%d]+)。";
+UgkpRaid_lang_ReceivesLoot4 = "([^%s]+)拾取了物品:(.+)。";
+--]]
 UgkpRaid_lang_ReceivesLootYou = "你";
 UgkpRaid_lang_UnknownEntity = "未知目標";
 UgkpRaid_lang_RequiresLevel = "需要等級";
@@ -337,7 +347,7 @@ UGKP_MESSAGE_NO_MEMBER="沒有成員，你是否在一個RAID中";
 
 UGKP_BUTTON_RAID_DELETE="刪除";
 UGKP_MESSAGE_RAID_DELETE="確定要刪除選中的RAID嗎";
-UGKP_MESSAGE_DUNIU="由嘟牛遊戲網UGKP發佈";
+--UGKP_MESSAGE_DUNIU="由嘟牛遊戲網UGKP發佈";
 UGKP_MESSAGE_TITLE_REPORT="本次渡邊 G 團消費報告"
 
 UGKP_MESSAGE_GOLD="金幣";
@@ -361,7 +371,7 @@ UGKP_SET_ITEM_PRICE="設置物品價格";
 UGKP_MESSAGE_ITEM_PRICE="實拍價格";
 UGKP_MEMBER_HEAD_DIS="分配";
 
-UGKP_EDIT_MESSAGE_RULER1="UT號是: 密碼";
+UGKP_EDIT_MESSAGE_RULER1="";
 UGKP_BUTTON_RAID_PUB="發佈";
 
 

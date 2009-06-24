@@ -6,7 +6,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		<Size>
 			<AbsDimension x="105" y="32"/>
 		</Size>
-		
+
 	<Frames>
 	<CheckButton name="$parentCheck" inherits="SendMailRadioButtonTemplate"  virtual="true">
 		<Size>
@@ -67,10 +67,10 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Anchor>
 			</Anchors>
 		</HighlightTexture>
-		
+
 	</Button>
 </Frames>
-	
+
 </Button>
 <Button name="UgkpItemListButtonTemplate" virtual="true"  hidden="true">
 		<Size>
@@ -79,9 +79,9 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		<Layers>
 			<Layer level="BORDER">
 				<FontString name="$parentitemid" inherits="GameFontNormal" hidden="true" />
-					
-				
-				
+
+
+
 				<FontString name="$parentName" inherits="GameFontNormal" justifyH="LEFT" text="aaaa">
 					<Size>
 						<AbsDimension x="150" y="14"/>
@@ -142,7 +142,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Anchor>
 					</Anchors>
 				</FontString>
-				
+
 				<FontString name="$parentDeleteItemDkpText" inherits="GameFontNormal" justifyH="LEFT" text="[X]">
 					<Size>
 						<AbsDimension x="40" y="16"/>
@@ -158,7 +158,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			</Layer>
 		</Layers>
 		<Frames>
-			
+
 			<Button name="$parentChangeItemDkp" hidden="false">
 				<Size>
 					<AbsDimension x="16" y="16"/>
@@ -175,7 +175,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				<HighlightTexture file="Interface\Buttons\UI-PlusButton-Up" alphaMode="ADD"/>
 				<Scripts>
 				<OnClick>
-					
+
 					getglobal("currentitemid"):SetText(getglobal("UgkpItemFrameListButton"..this:GetParent():GetID().."itemid"):GetText());
 					UgkpChangeItemDkpFrame:Show();
 				</OnClick>
@@ -185,14 +185,14 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					GameTooltip:AddLine(UGKP_TOOLTIP_ITEM_CHANGEGKP, 1, 0.7, 0);
 					GameTooltip:Show();
 				</OnEnter>
-				
+
 				<OnLeave>
-					GameTooltip:Hide();						
+					GameTooltip:Hide();
 				</OnLeave>
 				</Scripts>
 			</Button>
-			
-			
+
+
 			<Button name="$parentChangeMember" hidden="false">
 				<Size>
 					<AbsDimension x="16" y="16"/>
@@ -218,13 +218,13 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						GameTooltip:AddLine(UGKP_TOOLTIP_ITEM_CHANGEMEMBER, 1, 0.7, 0);
 						GameTooltip:Show();
 					</OnEnter>
-					
+
 					<OnLeave>
-						GameTooltip:Hide();						
+						GameTooltip:Hide();
 					</OnLeave>
 				</Scripts>
 			</Button>
-			
+
 			<Button name="$parentDeleteItemDkp">
 				<Size>
 					<AbsDimension x="16" y="16"/>
@@ -254,11 +254,11 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnLoad>
 					<OnLeave>
 						getglobal(this:GetName() .. "Text"):SetTextColor(1, 0.7, 0);
-						GameTooltip:Hide();						
+						GameTooltip:Hide();
 					</OnLeave>
 				</Scripts>
 			</Button>
-			
+
 			<CheckButton name="$parentCheck" inherits="OptionsCheckButtonTemplate"  virtual="true">
 				<Size>
 					<AbsDimension x="26" y="26"/>
@@ -302,9 +302,9 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		</HighlightTexture>
 	</Button>
  <Frame name="Ugkp_ItemFrame" parent="UgkpRaidBorderFrame" inherits="UgkpRaidTabFrame" >
- 
+
 		<Frames>
-					
+
 					<Button name="UgkpItemFrameColumnHeader2" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_ITEM_ICON">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="Ugkp_ItemFrame" relativePoint="TOPLEFT">
@@ -319,7 +319,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</OnLoad>
 						</Scripts>
 					</Button>
-					
+
 					<Button name="UgkpItemFrameColumnHeader3" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_ITEM_NAME">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="UgkpItemFrameColumnHeader2" relativePoint="RIGHT">
@@ -335,7 +335,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							<OnLoad>
 								Ugkp_setButtonWidth(150,this);
 							</OnLoad>
-							
+
 						</Scripts>
 					</Button>
 					<Frame name="Ugkp_ItemColorDropDown" inherits="UIDropDownMenuTemplate" hidden="true">
@@ -346,7 +346,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								</Offset>
 							</Anchor>
 						</Anchors>
-						
+
 						<Scripts>
 							<OnLoad>
 								Ugkp_ItemColorDropDown_OnLoad();
@@ -356,7 +356,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</OnShow>
 						</Scripts>
 					</Frame>
-					
+
 					<Button name="UgkpItemFrameColumnHeader4" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_ITEM_TIME">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="UgkpItemFrameColumnHeader3" relativePoint="RIGHT">
@@ -391,7 +391,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</OnLoad>
 						</Scripts>
 					</Button>
-					
+
 					<Button name="UgkpItemFrameColumnHeader6" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_ITEM_TOMEMBER">
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="UgkpItemFrameColumnHeader5" relativePoint="RIGHT">
@@ -424,7 +424,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							<OnLoad>
 								Ugkp_setButtonWidth(80, this);
 							</OnLoad>
-							
+
 						</Scripts>
 					</Button>
 					<Button name="UgkpItemFrameColumnHeader8" inherits="UgkpFrameColumnHeaderTemplate" text="UGKP_HEAD_UPDATE">
@@ -445,13 +445,13 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Layer>
 						</Layers>
 						<Scripts>
-							
+
 							<OnLoad>
 								Ugkp_setButtonWidth(40,this);
 							</OnLoad>
 						</Scripts>
 					</Button>
-					
+
 					<Button name="UgkpItemFrameListButton1" inherits="UgkpItemListButtonTemplate" id="1">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpItemFrameColumnHeader2"  relativePoint="BOTTOMLEFT">
@@ -461,7 +461,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</Button>
-					
+
 					<Button name="UgkpItemFrameListButton2" inherits="UgkpItemListButtonTemplate" id="2">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpItemFrameListButton1" relativePoint="BOTTOMLEFT">
@@ -471,7 +471,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</Button>
-					
+
 					<Button name="UgkpItemFrameListButton3" inherits="UgkpItemListButtonTemplate" id="3">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpItemFrameListButton2" relativePoint="BOTTOMLEFT">
@@ -481,7 +481,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</Button>
-					
+
 					<Button name="UgkpItemFrameListButton4" inherits="UgkpItemListButtonTemplate" id="4">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpItemFrameListButton3" relativePoint="BOTTOMLEFT">
@@ -491,8 +491,8 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</Button>
-					
-					
+
+
 					<Button name="UgkpItemFrameListButton5" inherits="UgkpItemListButtonTemplate" id="5">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpItemFrameListButton4" relativePoint="BOTTOMLEFT">
@@ -502,8 +502,8 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</Button>
-					
-					
+
+
 					<Button name="UgkpItemFrameListButton6" inherits="UgkpItemListButtonTemplate" id="6">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpItemFrameListButton5" relativePoint="BOTTOMLEFT">
@@ -513,7 +513,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</Button>
-					
+
 					<Button name="UgkpItemFrameListButton7" inherits="UgkpItemListButtonTemplate" id="7">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpItemFrameListButton6" relativePoint="BOTTOMLEFT">
@@ -523,7 +523,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</Button>
-					
+
 					<Button name="UgkpItemFrameListButton8" inherits="UgkpItemListButtonTemplate" id="8">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpItemFrameListButton7" relativePoint="BOTTOMLEFT">
@@ -533,7 +533,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</Button>
-					
+
 					<Button name="UgkpItemFrameListButton9" inherits="UgkpItemListButtonTemplate" id="9">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpItemFrameListButton8" relativePoint="BOTTOMLEFT">
@@ -543,7 +543,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</Button>
-					
+
 					<Button name="UgkpItemFrameListButton10" inherits="UgkpItemListButtonTemplate" id="10">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpItemFrameListButton9" relativePoint="BOTTOMLEFT">
@@ -564,17 +564,17 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								</Offset>
 							</Anchor>
 						</Anchors>
-						
+
 						<Scripts>
 							<OnVerticalScroll>
 								Ugkp_Debug("OnVerticalScroll");
 								FauxScrollFrame_OnVerticalScroll(self,arg1,UGKP_BUTTON_HEIGHT, Ugkp_UpdateItem);
 							</OnVerticalScroll>
 						</Scripts>
-						
+
 					</ScrollFrame>
-					
-					
+
+
 			<Button name="UgkpDeleteAllItemButton" inherits="OptionsButtonTemplate" text="UGKP_BUTTON_ITEM_DELETE">
 				<Anchors>
 					<Anchor point="BOTTOM">
@@ -589,7 +589,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			
+
 			<Button name="UgkAddItemButton" inherits="OptionsButtonTemplate" text="UGKP_MESSAGE_ADDITEM">
 				<Anchors>
 					<Anchor point="LEFT" relativeTo="UgkpDeleteAllItemButton" relativePoint="RIGHT">
@@ -604,8 +604,8 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-					
-					
+
+
 		</Frames>
 		<Scripts>
 			<OnShow>
@@ -620,7 +620,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			</OnLoad>
 		</Scripts>
 	</GameTooltip>
- 	
+
  	<Frame name="UgkpChangeItemDkpFrame" parent="UIParent" hidden="true" toplevel="true" enableMouse="true" movable="true">
 		 <Size>
 			<AbsDimension x="400" y="120"/>
@@ -650,7 +650,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</FontString>
-					
+
 					<FontString name="$parentDkpPoint" inherits="GameFontNormal" text="UGKP_MESSAGE_ITEM_PRICE">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpChangeItemDkpFrame" relativePoint="TOPLEFT">
@@ -660,7 +660,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</FontString>
-					
+
 				</Layer>
 			</Layers>
 		<Frames>
@@ -673,7 +673,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</Button>
-			<EditBox name="UgkpChangeItemPoint" letters="5" numeric="false" inherits="UgkpEditBoxTemplate">
+			<EditBox name="UgkpChangeItemPoint" letters="9" numeric="false" inherits="UgkpEditBoxTemplate">
 					<Size>
 					<AbsDimension x="250" y="26"/>
 					</Size>
@@ -690,8 +690,8 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</OnEscapePressed>
 					</Scripts>
 			</EditBox>
-		
-			
+
+
 			<Button name="UgkpChangeItemDkpFrameDone" inherits="OptionsButtonTemplate" text="UGKP_BUTTON_GKP_ADD">
 				<Anchors>
 					<Anchor point="BOTTOM">
@@ -707,16 +707,16 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			
-		</Frames>	
+
+		</Frames>
 		<Scripts>
 					<OnShow>
-					
+
 						getglobal("UgkpChangeItemPoint"):SetFocus();
 					</OnShow>
-		</Scripts>	
+		</Scripts>
 		 </Frame>
-		 
+
 		 <Frame name="UgkpChangeItemMemberFrame" parent="UIParent" hidden="true" toplevel="true" enableMouse="true" movable="true">
 		 <Size>
 			<AbsDimension x="512" y="500"/>
@@ -734,9 +734,9 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				<BackgroundInsets>
 					<AbsInset left="3" right="5" top="3" bottom="5"/>
 				</BackgroundInsets>
-			</Backdrop>	
+			</Backdrop>
 			<Layers>
-			
+
 				<Layer level="ARTWORK">
 					<FontString name="$parentTitle" inherits="GameFontNormal" text="UGKP_TITLE_EVENT_MEMBERS">
 						<Anchors>
@@ -747,7 +747,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</FontString>
-					
+
 				</Layer>
 			</Layers>
 		<Frames>
@@ -796,7 +796,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList5" inherits="UgkpItemMemberListTemplate" id="5">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList1"  relativePoint="BOTTOM">
@@ -833,7 +833,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList9" inherits="UgkpItemMemberListTemplate" id="9">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList5"  relativePoint="BOTTOM">
@@ -870,7 +870,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList13" inherits="UgkpItemMemberListTemplate" id="13">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList9"  relativePoint="BOTTOM">
@@ -907,7 +907,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList17" inherits="UgkpItemMemberListTemplate" id="17">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList13"  relativePoint="BOTTOM">
@@ -944,7 +944,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList21" inherits="UgkpItemMemberListTemplate" id="21">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList17"  relativePoint="BOTTOM">
@@ -981,7 +981,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList25" inherits="UgkpItemMemberListTemplate" id="25">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList21"  relativePoint="BOTTOM">
@@ -1018,7 +1018,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList29" inherits="UgkpItemMemberListTemplate" id="29">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList25"  relativePoint="BOTTOM">
@@ -1055,7 +1055,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList33" inherits="UgkpItemMemberListTemplate" id="33">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList29"  relativePoint="BOTTOM">
@@ -1092,7 +1092,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList37" inherits="UgkpItemMemberListTemplate" id="37">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList33"  relativePoint="BOTTOM">
@@ -1129,7 +1129,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList41" inherits="UgkpItemMemberListTemplate" id="41">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList37"  relativePoint="BOTTOM">
@@ -1166,7 +1166,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList45" inherits="UgkpItemMemberListTemplate" id="45">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList41"  relativePoint="BOTTOM">
@@ -1203,7 +1203,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList49" inherits="UgkpItemMemberListTemplate" id="49">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList45"  relativePoint="BOTTOM">
@@ -1240,7 +1240,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList53" inherits="UgkpItemMemberListTemplate" id="53">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList49"  relativePoint="BOTTOM">
@@ -1277,7 +1277,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
+
 			<Button name="UgkpItemMemberList57" inherits="UgkpItemMemberListTemplate" id="57">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="UgkpItemMemberList53"  relativePoint="BOTTOM">
@@ -1314,11 +1314,11 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 			</Button>
-			
-		
-			
-			
-			
+
+
+
+
+
 			<Button name="$parentDone" inherits="OptionsButtonTemplate" text="UGKP_BUTTON_GKP_ADD">
 				<Anchors>
 					<Anchor point="BOTTOM">
@@ -1333,7 +1333,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			
+
 			<Button name="$parentCancel" inherits="OptionsButtonTemplate" text="UGKP_BUTTON_GKP_CANCEL">
 				<Anchors>
 						<Anchor point="LEFT" relativeTo="$parentDone"  relativePoint="RIGHT">
@@ -1348,11 +1348,11 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			
+
 		</Frames>
-				<Scripts>		
+				<Scripts>
 					<OnMouseUp>
-						
+
 						UgkpChangeItemMemberFrame_OnMouseUp();
 					</OnMouseUp>
 					<OnMouseDown>
@@ -1366,7 +1366,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnShow>
 				</Scripts>
 	</Frame>
-	
+
 	<Frame name="UGKP_AcceptDeleteFrame" toplevel="true" frameStrata="DIALOG" movable="true" enableMouse="true" hidden="true" parent="UIParent">
 		<Size>
 			<AbsDimension x="350" y="130"/>
@@ -1449,7 +1449,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						elseif(getglobal("UGKP_AcceptDeleteFrametype"):GetText()=="5") then
 							UgkpdeleteLeftMember();
 						elseif(getglobal("UGKP_AcceptDeleteFrametype"):GetText()=="6") then
-							UgkpDeleteOfflineMember();	
+							UgkpDeleteOfflineMember();
 						elseif(getglobal("UGKP_AcceptDeleteFrametype"):GetText()=="7") then
 							Ugkp_DeleteSelectItem();
 						end
@@ -1474,7 +1474,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			
+
 		</Frames>
 		<Scripts>
 			<OnShow>
@@ -1484,11 +1484,11 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				PlaySound("UChatScrollButton");
 			</OnHide>
 		</Scripts>
-		
-		
-			
+
+
+
 	</Frame>
-	
+
 	<Frame name="UgkpAddItemFrame" parent="UIParent" hidden="true" toplevel="true" enableMouse="true" movable="true">
 		 <Size>
 			<AbsDimension x="400" y="180"/>
@@ -1518,7 +1518,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</FontString>
-					
+
 					<FontString name="$parentItemName" inherits="GameFontNormal" text="UGKP_HEAD_ITEM_NAME">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpAddItemFrame" relativePoint="TOPLEFT">
@@ -1537,7 +1537,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</FontString>
-					
+
 					<FontString name="$parentMember" inherits="GameFontNormal" text="UGKP_HEAD_ITEM_TOMEMBER">
 						<Anchors>
 							<Anchor point="TOPLEFT" relativeTo="UgkpAddItemFrame" relativePoint="TOPLEFT">
@@ -1547,7 +1547,6 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Anchor>
 						</Anchors>
 					</FontString>
-					
 				</Layer>
 			</Layers>
 		<Frames>
@@ -1571,9 +1570,9 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</Offset>
 						</Anchor>
 					</Anchors>
-					
+
 			</Button>
-			
+
 			<Frame name="Ugkp_AddItemClassDropDown" inherits="UIDropDownMenuTemplate" id="1">
 				<Anchors>
 					<Anchor point="TOP" relativeTo="UgkpAddItemName" relativePoint="BOTTOM">
@@ -1584,7 +1583,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						
+
 						Ugkp_setButtonWidth(200,this);
 					</OnLoad>
 					<OnShow>
@@ -1592,7 +1591,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnShow>
 				</Scripts>
 			</Frame>
-			
+
 			<Frame name="Ugkp_AddItemMemberDropDown" inherits="UIDropDownMenuTemplate" id="1">
 				<Anchors>
 					<Anchor point="TOP" relativeTo="Ugkp_AddItemClassDropDown" relativePoint="BOTTOM">
@@ -1603,17 +1602,17 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						
+
 						Ugkp_setButtonWidth(200,this);
 					</OnLoad>
 					<OnShow>
-						
+
 					</OnShow>
 				</Scripts>
 			</Frame>
-			
-			
-			
+
+
+
 			<Button name="UgkpAddItemFrameDone" inherits="OptionsButtonTemplate" text="UGKP_BUTTON_GKP_ADD">
 				<Anchors>
 					<Anchor point="BOTTOM">
@@ -1628,22 +1627,22 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			
+
 		</Frames>
 		<Scripts>
 			<OnShow>
 				Tem_ChatFrame_OnHyperlinkShow=ChatFrame_OnHyperlinkShow;
-				--ChatFrame_OnHyperlinkShow=Ugkp_SetItemRef;	
-				ChatFrame_OnHyperlinkShow=Ugkp_ChatFrame_OnHyperlinkShow;	
+				--ChatFrame_OnHyperlinkShow=Ugkp_SetItemRef;
+				ChatFrame_OnHyperlinkShow=Ugkp_ChatFrame_OnHyperlinkShow;
 				getglobal("UgkpAddItemNameText"):SetText("");
 				--sLink=getglobal("UgkpAddItemNameText"):GetText();
 				--Ugkp_Debug(sLink.."ccc");
 			</OnShow>
-			
+
 			<OnHide>
 				ChatFrame_OnHyperlinkShow=Tem_ChatFrame_OnHyperlinkShow;
 			</OnHide>
-						
+
 		</Scripts>
 	</Frame>
   </Ui>

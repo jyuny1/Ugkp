@@ -122,7 +122,7 @@ function ugkp_gen_report(report_type)
 		local ugkp_sum=incoin+UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet1"]+UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet2"]+UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet3"]+UGKP_PARTY_STUFF[UgkpRaid_GetCurrentRaid]["packet4"]
 		local ugkp_last=ugkp_sum - outcoin;
 
-		report_text=UGKP_MESSAGE_TITLE_REPORT.."("..UGKP_MESSAGE_DUNIU..")";
+		report_text=UGKP_MESSAGE_TITLE_REPORT;
 		report_text=report_text.."\n"..UGKP_HEAD_REPORT_REVENUE..":"..ugkp_sum.."G";
 		report_text=report_text.."\n".."----------------------"
 		report_text=report_text.."\n"..UGKP_HEAD_REPORT_ITEM..":"..incoin.."G";

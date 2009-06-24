@@ -133,7 +133,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 					<OnEnter>
 						GameTooltip_SetDefaultAnchor(GameTooltip, UIParent);
-						GameTooltip:SetText("开启/关闭 Ugkp");
+						GameTooltip:SetText(UGKP_MINIMAP_TOOLTIP);
 					</OnEnter>
 					<OnLeave>
 						GameTooltip:Hide();
