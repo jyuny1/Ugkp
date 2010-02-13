@@ -1,4 +1,4 @@
-## Interface: 30100
+## Interface: 30300
 ## Title:  UGkp V3.10-dobang
 ## Notes:  UGkp V3.10-dobang
 ## OptionalDeps:
