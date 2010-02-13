@@ -147,9 +147,17 @@ function ugkp_gen_report(report_type)
 		report_text=report_text.."\n"..UGKP_HEAD_REPORT_LAST..":"..ugkp_last.."G"
 		report_text=report_text.."\n"..UGKP_HEAD_REPORT_MEMBER..":"..l
 		if(UgkpOptions.CoinLevel==1) then
+		        report_text=report_text.."\n".."-------無分紅--------"
 			report_text=report_text.."\n"..UGKP_HEAD_EVENT_TADV..":"..math.floor(ugkp_last/l).."G"
+		        report_text=report_text.."\n".."--------分紅---------"
+			report_text=report_text.."\n"..FIVE_PERCENT_BONUS..":"..math.floor(ugkp_last*0.05).."G"
+			report_text=report_text.."\n"..UGKP_HEAD_EVENT_TADV..":"..math.floor(ugkp_last*0.95/l).."G"
 		else
+		        report_text=report_text.."\n".."-------無分紅--------"
 			report_text=report_text.."\n"..UGKP_HEAD_EVENT_TADV..":"..(math.floor(ugkp_last/l*100)/100).."G"
+		        report_text=report_text.."\n".."--------分紅---------"
+			report_text=report_text.."\n"..FIVE_PERCENT_BONUS..":"..(math.floor(ugkp_last*0.05*100)/100).."G"
+			report_text=report_text.."\n"..UGKP_HEAD_EVENT_TADV..":"..(math.floor(ugkp_last*0.95/l*100)/100).."G"
 		end
 		getglobal("ugkp_ReportGenBodyEditBox"):SetText(report_text);
 	end
