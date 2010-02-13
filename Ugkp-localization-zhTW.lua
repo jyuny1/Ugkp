@@ -104,6 +104,8 @@ UGKP_HEAD_EVENT_TOUT="總支出";
 UGKP_HEAD_EVENT_TADV="所有人平均";
 
 FIVE_PERCENT_BONUS="5%紅利"
+BONUS_TITLE="--------分紅---------"
+NO_BONUS_TITLE="-------無分紅--------"
 
 UGKP_CHECKBOX_EVENT_ALL="所有事件";
 UGKP_BUTTON_EVENT_SAVE="保存";
